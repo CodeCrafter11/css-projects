@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6C9A8B;
+    font-family: 'poppins';
+}
+
+.load {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    column-gap: 5px;
+    height: 200px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 50% 20% / 10% 40%;
+    padding-bottom: 4rem;
+}
+
+.load span {
+  --duration: 1s;  
+  height: var(--height);
+  width: 10px;
+  background-color: #E8998D;
+  border: none;
+  border-radius: 5px;
+  animation: animation var(--duration) ease-in-out infinite;
+}
+
+.load span:nth-child(1) {
+    --height: 40px;
+    animation-delay: 0.25s;
+}
+
+.load span:nth-child(2) {
+    --height: 60px;
+    animation-delay: 0.55s;
+}
+
+.load span:nth-child(3) {
+    --height: 75px;
+    animation-delay: 0.75s;
+}
+
+.load span:nth-child(4) {
+    --height: 60px;
+    animation-delay: 1s;
+}
+
+.load span:nth-child(5) {
+    --height: 40px;
+  animation-delay: 1.25s;
+}
+
+.attribute{
+    position: absolute;
+    bottom: 10px;
+}
+
+@keyframes animation {
+    0%, 100% {
+      transform: translateY(25%);
+      opacity: 0.4;
+      box-shadow: 0 0 20px #EED2CC;
+    }
+    50% {
+      transform: translateY(0);
+      opacity: 1;
+      box-shadow: none;
+      height: calc(var(--height) + 25px);
+    }
+}
