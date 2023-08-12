@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+
+:root {
+    --background: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body {
+    background-color: var(--background);
+    display: grid;
+    height: 100vh;
+    margin: 0px;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.container {
+    margin: auto;
+} 
+  
+.profile-wrapper {
+    width: 350px;
+    height: 450px;
+    position: relative;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: 0.5s;
+}
+ 
+.profile .profile-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: var(--background);
+    transition: .5s;
+}
+
+.profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile:hover img {
+    opacity: 0.4;
+    transition: .5s;
+}
+
+.profile:hover .profile-image {
+    transform: translateY(-104px);
+    transition: all .9s;
+}
+
+.profile:hover .profile-bio {
+    opacity: 0.9; 
+}
+
+.profile:hover li a {
+    opacity: 1; 
+}
+
+.profile:hover li:nth-child(1) a {
+    transition-delay: 0.1s;
+}
+
+.profile:hover li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+
+.profile:hover li:nth-child(3) a {
+    transition-delay: 0.3s;
+}
+
+.profile:hover li:nth-child(4) a {
+    transition-delay: 0.4s;
+}
+
+.profile-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    background: var(--background);
+    width: 100%;
+    height: 104px;
+    padding: 16px;
+    z-index: 1;
+    color: #333;
+    text-align: left;
+}
+
+.profile:hover .profile-name {
+    background-color: #fff;
+}
+
+.profile-name h2 {
+    margin-bottom: 8px;
+}
