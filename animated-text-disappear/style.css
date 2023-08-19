@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background-color: black;
+	height: 100vh;
+	font-family: 'Poppins' sans-serif;
+	font-size: 12vw;
+	text-transform: uppercase;
+	overflow: hidden;
+}
+.disappear{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	height: fit-content;
+	bottom: 0;
+	top: 0;
+}
+.disappear span{
+	display: inline-block;
+	color: transparent;
+	text-shadow: 0px 0px 0px rgb(255, 255, 255);
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+.disappear span:nth-child(1)
+{
+	animation-name: disappearleft;
+}
+
+
+.disappear span:nth-child(2)
+{
+	animation-name: disappearleft;
+	animation-delay: .3s;
+}
+
+.disappear span:nth-child(2)
+{
+	animation-name: disappearleft;
+	animation-delay: .3s;
+}
+
+.disappear span:nth-child(3)
+{
+	animation-name: disappearleft;
+	animation-delay: .6s;
+}
+
+.disappear span:nth-child(4)
+{
+	animation-name: disappearright;
+	animation-delay: .8s;
+}
+
+.disappear span:nth-child(5)
+{
+	animation-name: disappearright;
+	animation-delay: 1s;
+}
+
+.disappear span:nth-child(6)
+{
+	animation-name: disappearright;
+	animation-delay: 1.3s;
+}
+
+
+.disappear span:nth-child(7)
+{
+	animation-name: disappearleft;
+	animation-delay: 1.6s;
+}
+
+.disappear span:nth-child(8)
+{
+	animation-name: disappearright;
+	animation-delay: 2s;
+}
+
+.disappear span:nth-child(9)
+{
+	animation-name: disappearright;
+	animation-delay: 2.3s;
+}
+
+
+
+@keyframes disappearleft{
+	50%{
+		transform: skew(50deg) translateY(-200%);
+		text-shadow: 0px 0px 50px;
+		opacity: 0;
+	}
+}
+
+
+@keyframes disappearright{
+	50%{
+		transform: skew(-50deg) translateY(-200%);
+		text-shadow: 0px 0px 50px;
+		opacity: 0;
+	}
+}
+
+
