@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-auto-flow: column;
+    gap: 30px;
+    background: #460c0c;
+}
+
+@property --a { 
+    syntax: "<angle>";
+    initial-value: 0deg; 
+    inherits: true;
+}
+
+  @property --d { 
+    syntax: "<percentage>";
+    initial-value: 0%; 
+    inherits: true;
+}
+
+img {
+    --b: 10px; /* control the border thickness */
+    --g: 20px; /* control the gap */
+    
+    --d: 30%;
+    --a: 45deg;
+    --_o:50% + (var(--d) + var(--g) + var(--b));
+    --_i:50% + (var(--d) + var(--g));
+    --_f:50% + (var(--d));
+    clip-path: polygon(
+      /*  */
+      calc(var(--_o)*sin(-45deg + var(--a))) calc(var(--_o)*cos(-45deg + var(--a))),
+      calc(var(--_o)*sin( 45deg + var(--a))) calc(var(--_o)*cos( 45deg + var(--a))),
+      calc(var(--_o)*sin(135deg + var(--a))) calc(var(--_o)*cos(135deg + var(--a))),
+      calc(var(--_o)*sin(225deg + var(--a))) calc(var(--_o)*cos(225deg + var(--a))),
+      calc(var(--_o)*sin(-45deg + var(--a))) calc(var(--_o)*cos(-45deg + var(--a))),
+      /*  */
+      calc(var(--_i)*sin(-45deg + var(--a))) calc(var(--_i)*cos(-45deg + var(--a))),
+      calc(var(--_i)*sin(225deg + var(--a))) calc(var(--_i)*cos(225deg + var(--a))),
+      calc(var(--_i)*sin(135deg + var(--a))) calc(var(--_i)*cos(135deg + var(--a))),
+      calc(var(--_i)*sin( 45deg + var(--a))) calc(var(--_i)*cos( 45deg + var(--a))),
+      calc(var(--_i)*sin(-45deg + var(--a))) calc(var(--_i)*cos(-45deg + var(--a))),
+      /*  */
+      calc(var(--_f)*sin(-45deg + var(--a))) calc(var(--_f)*cos(-45deg + var(--a))),
+      calc(var(--_f)*sin( 45deg + var(--a))) calc(var(--_f)*cos( 45deg + var(--a))),
+      calc(var(--_f)*sin(135deg + var(--a))) calc(var(--_f)*cos(135deg + var(--a))),
+      calc(var(--_f)*sin(225deg + var(--a))) calc(var(--_f)*cos(225deg + var(--a))),
+      calc(var(--_f)*sin(-45deg + var(--a))) calc(var(--_f)*cos(-45deg + var(--a)))
+);
+
+    outline: 166px solid #2c2c2c; /* color here */
+    outline-offset: 2px; /* a small value to avoid a visual glitch */
+    cursor: pointer;
+    transition: --d .3s,--a .2s .2s;
+}
+
+img:hover {
+    --a: 0deg;
+    --d: 71%;
+    transition: --a .3s,--d .2s .2s;
+}
+  
+  
+  
