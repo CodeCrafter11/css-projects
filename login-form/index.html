@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Google Fonts and Icons-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="center">
+      <form action="">
+        <div class="title">Login</div>
+        <span class="inputs">
+          <span class="inputf">
+            <input type="email" class="input" placeholder="Email" />
+            <span class="label">Email</span>
+            <span class="material-icons icon">email</span>
+          </span>
+          <span class="inputf">
+            <input type="password" class="input" placeholder="Password" />
+            <span class="label">Password</span>
+            <span class="material-icons icon">lock</span>
+          </span>
+        </span>
+        <div class="links">
+          <a href="#">Forgot Password</a>
+          <label for="remember">
+            <input type="checkbox" id="remember" />
+            Remember Me
+          </label>
+        </div>
+        <button type="button" class="btn">
+          <span>Login</span>
+          <div class="dots">
+            <div class="dot" style="--delay: 0s"></div>
+            <div class="dot" style="--delay: 0.25s"></div>
+            <div class="dot" style="--delay: 0.5s"></div>
+          </div>
+        </button>
+        <div class="text">
+          New user? Create an account <a href="#">Register</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      var btn = document.querySelector(".btn");
+      var inputs = document.querySelectorAll(".input");
+      btn.onclick = function () {
+        btn.classList.toggle("active");
+        setTimeout(() => {
+          btn.classList.toggle("active");
+          inputs[1].classList.toggle("active");
+        }, 1500);
+        setTimeout(() => {
+          inputs[1].classList.toggle("active");
+        }, 3000);
+      };
+    </script>
+  </body>
+</html>
