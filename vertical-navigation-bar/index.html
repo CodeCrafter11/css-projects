@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Navigation Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  <body>
+    <div class="card">
+        <div class="menu">
+          <div class="toggle">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+          </div>
+            <ul>
+              <li>
+                <i class="fas fa-home fa-lg"></i>
+                <span>Home</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope fa-lg"></i>
+                <span>Messages</span>
+              </li>
+              <li>
+                <i class="fas fa-cog fa-lg"></i>
+                <span>Settings</span>
+              </li>
+              <li>
+                <i class="fas fa-sign-out-alt fa-lg"></i>
+                <span>Log Out</span>
+              </li>
+            </ul>
+        </div>
+      </div>
+  <script>
+    let menu = document.querySelector('.menu');
+    let toggle = document.querySelector('.toggle');
+
+    toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    });
+  </script>      
+  </body>
+</html>
