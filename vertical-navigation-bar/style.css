@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+  
+html,
+body {
+    height: 100vh;
+    background-color: #004257;
+}
+  
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.card {
+    position: relative;
+}
+  
+.menu {
+    width: 67px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: 0.5s;
+}
+  
+.menu.active {
+    width: 225px;
+}
+  
+.toggle {
+    position: absolute;
+    top: -20px;
+    right: -15px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+  
+.line-1,
+.line-2 {
+    height: 2px;
+    width: 15px;
+    background-color: #ffffff;
+    transition: 0.5s ease;
+}
+  
+.line-1 {
+    transform: rotate(-35deg) translate(5px, 8px);
+}
+  
+.line-2 {
+    transform: rotate(35deg) translate(-8px, 0px);
+}
+  
+.menu.active .line-1 {
+    transform: rotate(-45deg) translate(5px, 6px);
+}
+  
+.menu.active .line-2 {
+    transform: rotate(45deg) translate(-5px, 6px);
+}
+  
+ul {
+    position: relative;
+    width: 100%;
+}
+  
+li {
+    position: relative;
+    list-style: none;
+    height: 75px;
+    width: 100%;
+    padding-left: 23px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+  
+li:hover {
+    background-color: #dddddd;
+}
+  
+span {
+    margin-left: 20px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+}
+  
+.menu.active span {
+    visibility: visible;
+    opacity: 1;
+}
