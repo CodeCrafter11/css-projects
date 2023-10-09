@@ -1,0 +1,23 @@
+body {
+    background: linear-gradient(to bottom right, rgb(38, 70, 2), rgb(4, 77, 77));
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner{
+    height: 120px;
+    width: 120px;
+    border: 6px solid;
+    border-color: white transparent white transparent;
+    border-radius: 50%;
+    animation: spin 1.3s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
