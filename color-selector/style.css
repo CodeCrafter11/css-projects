@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: "Inter";
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background: #8b8787;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: #29292c;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.5rem 1.5rem;
+}
+.colors:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #18181b;
+  z-index: 2
+}
+
+.leftbar, .rightbar {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+.leftbar {
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  animation: leftIn 400ms ease;
+}
+.rightbar {
+  inset: 0.65rem 0.5rem 0.65rem auto;
+  animation: rightIn 400ms ease;
+}
+
+@media (hover: hover) {
+  .colors:hover .leftbar {
+    transform: translateX(0.15rem)
+  }
+  .colors:hover .rightbar {
+    transform: translateX(-0.15rem)
+  }
+}
+@keyframes leftIn {
+  from {
+    transform: translateX(0.5rem) scale(0.9);
+    opacity: 0;
+  }
+}
+@keyframes rightIn {
+  from {
+    transform: translateX(-0.5rem) scale(0.9);
+    opacity: 0;
+  }
+}
+@keyframes leftOut {
+  to {
+    transform: translateX(-0.7rem) scale(1.1);
+    opacity: 0;
+  }
+}
+@keyframes rightOut {
+  to {
+    transform: translateX(0.7rem) scale(1.1);
+    opacity: 0;
+  }
+}
+
+
+.color {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  z-index: 6;
+  margin: 0.5rem;
+}
+.color > div {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+.color > div:nth-child(1) {
+  border: 0.0625rem solid #29292c;
+  inset: 0rem;
+  opacity: 1;
+  transition: transform 450ms ease, opacity 450ms ease;
+}
+.color.active > div:nth-child(1) {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.color > div:nth-child(2) {
+  background: var(--gradient);
+  inset: 0;
+  transform: scale(0.7);
+  transition: transform 450ms ease;
+}
+.color.active > div:nth-child(2) {
+  transform: scale(1);
+  transition: transform 300ms ease;
+}
+
+.color > div:nth-child(3) {
+  background: #18181b;
+  inset: 0rem;
+  transform: scale(0);
+  transition: transform 300ms ease;
+}
+.color.active > div:nth-child(3) {
+  transform: scale(0.85);
+  transition: transform 300ms ease;
+}
+
+.color > div:nth-child(4) {
+  background: var(--gradient);
+  inset: 0rem;
+  transform: scale(0);
+  transition: transform 300ms ease;
+}
+.color.active > div:nth-child(4) {
+  transform: scale(0.6);
+  transition: transform 375ms ease 75ms;
+}
