@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Selector</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="colors">
+        <div class="color active" onclick="selectcolor(this)" style="
+          --gradient: linear-gradient(to right bottom, #ffa51a, #ff910c, #ff7c07, #ff640c, #ff4816);">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="color" onclick="selectcolor(this)" style="
+          --gradient: linear-gradient(135deg, #3cfd7f, #02fa99, #00f6af, #00f1c1, #12ebcf);">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="color" onclick="selectcolor(this)" style="
+          --gradient: linear-gradient(to right bottom,  #2eadff, #3d83ff, #7e61ff);">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="leftbar" style="--gradient: linear-gradient(to right bottom, #ffa51a, #ff910c, #ff7c07, #ff640c, #ff4816);"></div>
+        <div class="rightbar" style="--gradient: linear-gradient(to right bottom, #ffa51a, #ff910c, #ff7c07, #ff640c, #ff4816);"></div>
+      </div>
+    
+    <script>
+        if (location.pathname.match(/fullcpgrid/i) ? true : false) {
+        document.documentElement.style.fontSize = "32px"
+        }
+
+        const colorsEl = document.querySelector(".colors")
+
+        function selectcolor(el) {
+            if (el.classList.contains("active")) {return} 
+            document.querySelector(".active").classList.remove("active")
+            el.classList.add("active")
+            document.querySelectorAll(".leftbar").forEach(barEl => barEl.style.animation = "leftOut 400ms ease forwards")
+            document.querySelectorAll(".rightbar").forEach(barEl => barEl.style.animation = "rightOut 400ms ease forwards")
+  
+        const el1 = document.createElement("div");
+        el1.classList.add("leftbar");
+        el1.style.setProperty("--gradient", el.style.getPropertyValue("--gradient"))
+        colorsEl.appendChild(el1)
+        const el2 = document.createElement("div");
+        el2.classList.add("rightbar");
+        el2.style.setProperty("--gradient", el.style.getPropertyValue("--gradient"))
+        colorsEl.appendChild(el2)
+        }
+    </script>     
+  </body>
+</html>
