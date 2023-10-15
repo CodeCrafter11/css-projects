@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: "Inter";
+  font-size: 16px;
+  --gradient: linear-gradient(to right bottom, #ffa51a, #ff910c, #ff7c07, #ff640c, #ff4816);
+  --color: #ff7c07;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+}
+
+.down {
+  display: grid;
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  background: var(--gradient);
+  border-radius: 50%;
+  touch-action: none;
+}
+
+.downbtn {
+  margin: 0.125rem;
+  border-radius: 50%;
+  background: #18181b;
+  font-size: 1.8rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.downprogress {
+  position: absolute;
+  inset: 0.5rem auto 0.5rem 2rem;
+  width: 0;
+  border-radius: 1rem;
+  background: var(--gradient);
+  transition: width 750ms ease;
+}
+
+.inprogress .downprogress,
+.finished .downprogress {
+  transition: width 500ms ease;
+  width: 10rem;
+}
+
+.downprogress > .progressfill {
+  position: absolute;
+  inset: 0.125rem;
+  border-radius: 0.875rem;
+  background: #18181b;
+  overflow: hidden;
+}
+
+.downprogress > .progressfill:before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: var(--gradient);
+  transform: translateX(-9rem);
+  transition: transform 0ms 750ms
+}
+
+.inprogress .downprogress > .progressfill:before,
+.finished .downprogress > .progressfill:before {
+  transition: transform 2s ease 750ms;
+  transform: none;
+}
+
+.downprogress > .progressfill:after {
+  position: absolute;
+  content: "Open file.txt";
+  display: grid;
+  padding-left: 1rem;
+  place-content: center;
+  inset: 0 0 0 auto;
+  width: 10rem;
+  background: #18181b;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: transform 350ms ease 1s, opacity 350ms ease 350ms;
+  color: var(--color);
+}
+
+.inprogress .downprogress > .progressfill:after,
+.finished .downprogress > .progressfill:after {
+  transform: none;
+  opacity: 1;
+  transition: transform 350ms ease 2.4s, opacity 250ms ease 2.4s;
+}
+
+.downicon {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color: var(--color);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transition: transform 350ms ease 200ms, opacity 350ms ease 200ms;
+}
+
+.downicon > svg {
+  width: 55%;
+  height: 55%;
+}
+
+.inprogress .downicon {
+  transition: transform 500ms ease, inset 1.25s cubic-bezier(0.355, 0.045, 0.500, 0.345) 250ms, opacity 250ms linear 1.25s;
+  inset: 0 auto auto 9rem;
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.finished .downicon {
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+.downcheck {
+  position: absolute;
+  inset: 0;
+  color: var(--color);
+  display: grid;
+  place-content: center;
+  font-size: 2rem;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: transform 350ms ease, opacity 350ms ease;
+}
+
+.inprogress .downcheck,
+.finished .downcheck {
+  transform: none;
+  opacity: 1;
+  transition: transform 350ms ease 2.4s, opacity 350ms ease 2.4s;
+}
+
+.progressname {
+  position: absolute;
+  inset: 0;
+  background: #0c0c0b;
+  color: var(--color);
+  display: grid;
+  place-content: center;
+  font-size: 2rem;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: transform 350ms ease, opacity 350ms ease;
+}
+
+.inprogress .progressfill,
+.finished .progressfill {
+  transform: none;
+  opacity: 1;
+  transition: transform 350ms ease 2.4s, opacity 350ms ease 2.4s;
+}
