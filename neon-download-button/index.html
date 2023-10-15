@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Download Button</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="down" onclick="downstart()">
+        <div class="downprogress">
+          <div class="progressfill"></div>
+        </div>
+        <div class="downbtn"></div>
+        <div class="downicon">
+          <svg version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M112 268L256 412L400 268M256 392L256 100" fill="none" opacity="1" stroke="#ff7c07" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      </g>
+          </svg>
+        </div>
+        <div class="downcheck"><ion-icon name="checkmark-outline"></ion-icon></div>
+      </div>
+      
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+        const el = document.querySelector(".down")
+        let state = "normal"
+
+        if (location.pathname.match(/fullcpgrid/i) ? true : false) {
+            document.documentElement.style.fontSize = "48px"
+            el.style.transform = "translateX(-4rem)"
+  
+        setTimeout(function() {
+            el.classList.add("inprogress")
+            state = "inprogress"
+        }, 250);
+        }
+
+        function downstart() {
+            if (state == "finished") {
+                state = "normal"
+                el.classList.remove("finished")
+            } else if (state == "normal") {
+            state = "inprogress"
+            el.classList.add("inprogress")
+            }
+        }
+
+        function downend() {
+            if (state == "inprogress") {
+                state = "finished"
+                el.classList.remove("inprogress")
+                el.classList.add("finished")
+            }
+        }
+        document.querySelector(".downprogress > div").addEventListener("transitionend", downend);
+    </script>     
+  </body>
+</html>
