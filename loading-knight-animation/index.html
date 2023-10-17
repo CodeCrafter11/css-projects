@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Knight Animation</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <svg class="svg" viewBox="0 0 12 14">
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="100%" x2="82%" y2="18%">
+                <stop offset="0%" stop-color="hsl(30, 100%, 49%)"/>
+                <stop offset="100%" stop-color="hsl(35, 100%, 60%)"/>
+            </linearGradient>
+            
+            <linearGradient id="fillgradient" x1="0%" y1="100%" x2="82%" y2="18%">
+                <stop offset="0%" stop-color="hsl(30, 100%, 49%)" stop-opacity="1"/>
+                <stop offset="30%" stop-color="hsl(31.5, 100%, 52.3%)" stop-opacity="1"/>
+                <stop offset="30%" stop-opacity="0"/>
+            </linearGradient>
+            
+            <filter id="glow">
+            <feGaussianBlur stdDeviation="0.3" result="coloredBlur"/>
+            <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+            </filter>
+        </defs>
+        <path xmlns="http://www.w3.org/2000/svg" d="M 2 11 L 1 13 L 9 13 L 8 11 L 8 10 Q 8 9 6 7 C 7 8 7.5 7 8.25 7.5 Q 9 8 10 7 C 11 6 11 6 8.5 4 Q 6 2 6 1 C 5 1 5 2 4 2 Q 2 2 2 11" 
+        fill="url(#fillgradient)" filter="url(#glow)"/>
+        <path xmlns="http://www.w3.org/2000/svg" d="M 2 11 L 1 13 L 9 13 L 8 11 L 8 10 Q 8 9 6 7 C 7 8 7.5 7 8.25 7.5 Q 9 8 10 7 C 11 6 11 6 8.5 4 Q 6 2 6 1 C 5 1 5 2 4 2 Q 2 2 2 11" 
+        stroke="url(#gradient)" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="30 70" pathLength="100" stroke-dashoffset="50" filter="url(#glow)"/>
+    </svg>
+
+    <script>
+    const svgelement = document.querySelector(".svg");
+    let rotation = 0;
+    let loadprogress = 0;
+
+    setInterval(function () {
+	if ( loadprogress < 100 ) { loadprogress += 0.4; }
+	rotation += 1;
+	if ( rotation == 100 ) { rotation = 0; }
+	svgelement.innerHTML = `
+	<defs>
+		<linearGradient id="gradient" x1="0%" y1="100%" x2="82%" y2="18%">
+			<stop offset="0%" stop-color="hsl(30, 100%, 49%)"/>
+			<stop offset="100%" stop-color="hsl(35, 100%, 60%)"/>
+		</linearGradient>
+		
+		<linearGradient id="fillgradient" x1="0%" y1="100%" x2="82%" y2="18%">
+			<stop offset="0%" stop-color="hsl(30, 100%, 49%)" stop-opacity="1"/>
+			<stop offset="${loadprogress}%" stop-color="hsl(${loadprogress * 0.05 + 30}, 100%, ${loadprogress * 0.11 + 49}%)" stop-opacity="1"/>
+			<stop offset="${loadprogress}%" stop-opacity="0"/>
+		</linearGradient>
+		
+		<filter id="glow">
+    	<feGaussianBlur stdDeviation="0.3" result="coloredBlur"/>
+    	<feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+    	</feMerge>
+		</filter>
+	</defs>
+	<path xmlns="http://www.w3.org/2000/svg" d="M 2 11 L 1 13 L 9 13 L 8 11 L 8 10 Q 8 9 6 7 C 7 8 7.5 7 8.25 7.5 Q 9 8 10 7 C 11 6 11 6 8.5 4 Q 6 2 6 1 C 5 1 5 2 4 2 Q 2 2 2 11" 
+    fill="url(#fillgradient)" filter="url(#glow)"/>
+	<path xmlns="http://www.w3.org/2000/svg" d="M 2 11 L 1 13 L 9 13 L 8 11 L 8 10 Q 8 9 6 7 C 7 8 7.5 7 8.25 7.5 Q 9 8 10 7 C 11 6 11 6 8.5 4 Q 6 2 6 1 C 5 1 5 2 4 2 Q 2 2 2 11" 
+    stroke="url(#gradient)" stroke-width="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="${loadprogress} ${100 - loadprogress}" pathLength="100" stroke-dashoffset="${rotation}" filter="url(#glow)"/>`
+    }, 1000 / 60);
+    </script>     
+  </body>
+</html>
