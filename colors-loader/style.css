@@ -1,0 +1,79 @@
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px -50px;
+}
+  
+#c_shape {
+  animation: loader 1.5s linear infinite;
+  transform-origin: 62.1px 60.3px;
+  animation-play-state: running!important;
+}
+
+@keyframes loader {
+  100% { transform: rotate(360deg)}
+}
+  
+#loader rect {
+  animation: none 1.5s linear infinite;
+  display: inline-block;
+  animation-play-state: running!important;
+}
+
+#loader rect:nth-child(1) {
+  animation-name: loader1;
+}
+
+#loader rect:nth-child(2) {
+  animation-name: loader2;
+}
+
+#loader rect:nth-child(3) {
+  animation-name: loader3;
+}
+
+#loader rect:nth-child(4) {
+  animation-name: loader4;
+}
+
+#loader rect:nth-child(5) {
+  animation-name: loader5;
+}
+  
+@keyframes loader1 {
+  0% { fill: #3E2C53;}
+  33.3333% { fill: #AC2B61;}
+  66.6666% { fill: #F3E3B4;}
+}
+
+@keyframes loader2 {
+  0% { fill: #3F577A;}
+  33.3333% { fill: #E33D5F;}
+  66.6666% { fill: #BADCC8;}
+}
+
+@keyframes loader3 {
+  0% { fill: #4C8FA2;}
+  33.3333% { fill: #EF7C5E;}
+  66.6666% { fill: #7FC7BF;}
+}
+
+@keyframes loader4 {
+  0% { fill: #7BB594;}
+  33.3333% { fill: #F9C65F;}
+  66.6666% { fill: #EE7B73;}
+}
+
+@keyframes loader5 {
+  0% { fill: #DBD17F;}
+  33.3333% { fill: #F5EF9E;}
+  66.6666% { fill: #D4385F;}
+}
+  
+html, body {
+  height: 100%;
+  font-family: 'Varela Round', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
