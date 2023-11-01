@@ -1,0 +1,49 @@
+figure {
+	--b: 8px; /* border thickness */
+	--s: 60px; /* size of the corner */
+	--g: 14px; /* the gap */
+	--c: #edc951;
+	position: relative;
+	line-height: 0;
+	padding: var(--g);
+}
+
+figure::before, figure::after {
+	content: "";
+	box-sizing: border-box;
+	position: absolute;
+	border: solid var(--c);
+	transition: transform 0.3s var(--speed, 0.3s), inset 0.3s calc(0.3s - var(--speed, 0.3s));
+}
+
+figure::before {
+	inset: 0 calc(100% - var(--s)) calc(100% - var(--s)) 0;
+	border-width: var(--b) 0 0 var(--b);
+	transform: translate(calc(var(--b) * -1), calc(var(--b) * -1));
+}
+
+figure::after {
+	inset: calc(100% - var(--s)) 0 0 calc(100% - var(--s));
+	border-width: 0 var(--b) var(--b) 0;
+	transform: translate(var(--b), var(--b));
+}
+
+figure.alt, figure.alt > * {
+	transform: scaleX(-1);
+}
+
+figure:hover::before, figure:hover::after {
+	--speed: 0s;
+	--s: 100%;
+	transform: translate(0, 0);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 33px;
+	background: #90d1bd;
+}
