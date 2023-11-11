@@ -1,0 +1,41 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+ul {
+	filter: blur(10px) contrast(15);
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 500px;
+	width: 500px;
+	list-style: none;
+}
+
+li {
+	width: 100px;
+	height: 100px;
+	animation: 5s rotate infinite alternate-reverse;
+	border-radius: 50% 43% 45% 50%;
+	background: black;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(1turn) translate(50px);
+	}
+}
+
+li:nth-child(even) {
+	animation: 2s rotate infinite alternate-reverse;
+}
+
+li:nth-child(3) {
+	animation-duration: 5;
+	animation-delay: -1.5s;
+}
