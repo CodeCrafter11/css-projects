@@ -1,0 +1,352 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #40405a;
+  }
+  
+  .four-seasons {
+    position: relative;
+  }
+  
+  .window {
+    position: relative;
+    overflow: hidden;
+    width: 330px;
+    height: 250px;
+    border: 10px solid white;
+  }
+  
+  .r-button1, .r-button2, .r-button3, .r-button4 {
+    position: relative;
+    display: block;
+    border-radius: 50%; 
+    background-color: transparent;
+    cursor: pointer;
+    border: 3px solid #dad7cd;
+    transition: .3s;
+    width:10px;
+    height: 10px;
+    z-index:10;
+    top:210px;
+  }
+  
+  .r-button1:before, .r-button2:before, .r-button3:before, .r-button4:before {
+    content:"";
+    position: absolute;
+    height:7px;
+    width:7px;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    left:50%;
+    top:50%;
+    border-radius:50%;
+  }
+  
+  .r-button1 {
+    left:115px;
+  }
+  
+  .r-button2 {
+    left:145px;
+  }
+  
+  .r-button3 {
+    left: 175px;
+  }
+  
+  .r-button4 {
+    left: 205px;
+  }
+  
+  input#spring:checked ~ .spring {
+    display: block;
+    z-index:1;
+  }
+  
+  input#summer:checked ~ .summer {
+    display: block;
+    z-index:1;
+  }
+  
+  input#autumn:checked ~ .autumn {
+    display: block;
+    z-index:1;
+  }
+  
+  input#winter:checked ~ .winter {
+    display: block;
+    z-index:1;
+  }
+  
+  input {
+    opacity: 0;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    outline: none;
+    left: 0;
+    z-index: 10;
+  }
+  
+  input[type=radio]:checked + label .r-button1:before {
+    background-color: #dad7cd;
+  }
+  input[type=radio]:checked:hover + label .r-button1:before {
+    background-color: #a3b18a;
+  }
+  
+  input[type=radio]:hover + label .r-button1 {
+    border-color: #a3b18a;
+  }
+  
+  input[type=radio]:checked + label .r-button2:before {
+    background-color: #dad7cd;
+  }
+  input[type=radio]:checked:hover + label .r-button2:before {
+    background-color: #a3b18a;
+  }
+  
+  input[type=radio]:hover + label .r-button2 {
+    border-color: #a3b18a;
+  }
+  
+  input[type=radio]:checked + label .r-button3:before {
+    background-color: #dad7cd;
+  }
+  input[type=radio]:checked:hover + label .r-button3:before {
+    background-color: #a3b18a;
+  }
+  
+  input[type=radio]:hover + label .r-button3 {
+    border-color: #a3b18a;
+  }
+  
+  input[type=radio]:checked + label .r-button4:before {
+    background-color: #dad7cd;
+  }
+  input[type=radio]:checked:hover + label .r-button4:before {
+    background-color: #a3b18a;
+  }
+  
+  input[type=radio]:hover + label .r-button4 {
+    border-color: #a3b18a;
+  }
+  
+  .spring, .summer, .autumn, .winter {
+    position: absolute;
+    width: 330px;
+    height: 250px;
+    transition: .3s;
+  }
+  
+  .spring {
+    background-color: #00b4d8;
+  }
+  
+  .summer {
+    background-color: #48cae4;
+  }
+  
+  .autumn {
+    background-color: #61a5c2;
+  }
+  
+  .winter {
+    background-color: #caf0f8;
+  }
+  
+  .spring:before, .summer:before, .autumn:before, .winter:before {
+    content:"";
+    position: absolute;
+    width:450px;
+    height: 200px;
+    border-radius:50%;
+    left:-70px;
+    top:160px;
+  }
+  
+  .spring:after, .summer:after, .autumn:after, .winter:after {
+    content:"";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 20px 60px 20px;
+    top:65px;
+    left:-2px;
+  }
+  
+  .spring:before {
+    background-color: #70e000;
+    box-shadow: -150px -25px #38b000, 100px -30px #008000;
+  }
+  
+  .summer:before {
+    background-color: #38b000;
+    box-shadow: -150px -25px #008000, 100px -30px #007200;
+  }
+  
+  .autumn:before {
+    background-color: #ca5310;
+    box-shadow: -150px -25px #bb4d00, 100px -30px #8f250c;
+  }
+  
+  .winter:before {
+    background-color: #f8f9fa;
+    box-shadow: -150px -25px #e9ecef, 100px -30px #dee2e6;
+  }
+  
+  .window:before {
+    content:"";
+    position: absolute;
+    background-color: #774936;
+    width:7px;
+    height: 10px;
+    z-index:10;
+    top:125px;
+    left:15px;
+    box-shadow: 30px 3px #774936, 170px 0 #774936, 270px 48px #774936;
+  }
+  
+  .window:after {
+      content:"";
+      position: absolute;
+      z-index:10;
+      border-style: solid;
+      border-width: 0 20px 60px 20px;
+      border-color: transparent transparent #007f5f transparent;
+      top: 70px;
+      left:28px;
+      filter: drop-shadow(240px 45px #007f5f);
+  }
+  
+  .sun {
+    position: absolute;
+    border-radius:50%;
+    width: 60px;
+    height: 60px;
+    background-color: #ffc300;
+    left:50px;
+    box-shadow: 0 0 50px #ffd60a;
+    animation: sun 5s linear infinite;
+  }
+  
+  .sun:before {
+    content:"";
+    position: absolute;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    left:7.5px;
+    top: 7.5px;
+    background-color: #f1dca7;
+  }
+  
+  @keyframes sun {
+    0% {
+      box-shadow: 0 0 100px #ffd60a;
+    }
+    50% {
+      box-shadow: 0 0 0 #ffd60a;
+    }
+  }
+  
+  .snow, .snow:before {
+    position: absolute;
+    border-radius:50%;
+    width:5px; 
+    height: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 10px -20px #f8f9fa, 20px -30px #f8f9fa, 30px 30px #f8f9fa, -30px -30px #f8f9fa, 40px -20px #f8f9fa, 50px 20px #f8f9fa, 0 -30px #f8f9fa, 15px -60px #f8f9fa;
+    filter: drop-shadow(50px -50px #f8f9fa) drop-shadow(150px -50px #f8f9fa) drop-shadow(200px -70px #f8f9fa) drop-shadow(50px -150px #f8f9fa) drop-shadow(0 -100px #f8f9fa);
+    animation: snow 5s linear infinite;
+  }
+  
+  .snow:before {
+    content:"";
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes snow {
+    0% {transform: translateY(-50px);}
+    100% {transform: translateY(300px);}
+  }
+  
+  .spring:after {
+    border-color: transparent transparent #38b000 transparent;
+    filter: drop-shadow(170px 0 #38b000);
+  }
+  
+  .summer:after {
+    border-color: transparent transparent #008000 transparent;
+    filter: drop-shadow(170px 0 #008000);
+  }
+  
+  .autumn:after {
+    border-color: transparent transparent #8d0801 transparent;
+    filter: drop-shadow(170px 0 #8d0801);
+  }
+  
+  .winter:after {
+    border-color: transparent transparent #f8f9fa transparent;
+    filter: drop-shadow(170px 0 #f8f9fa);
+  }
+  
+  .flowers {
+    position: absolute;
+    width:5px;
+    height: 10px;
+    background-color: #fff;
+    border-radius:10px;
+    left:30px;
+    top: 210px;
+    filter: drop-shadow(50px -20px #ffd23f) drop-shadow(170px 0 #90e0ef) drop-shadow(40px 20px #ffb3c1);
+  }
+  
+  .flowers:before {
+      content:"";
+      position: absolute;
+      background-color: #fff;
+      width:10px;
+      height: 5px;
+      border-radius: 10px;
+      top:2.5px;
+      left:-2.5px;
+  }
+  
+  .leaf {
+      position: absolute;
+      background-color: #78290f;
+      width: 15px;
+      height: 15px;
+      border-radius: 0 50% 0 50%;
+      left:50px;
+      animation: fall 5s linear infinite;
+      box-shadow: 100px -50px #9e2a2b;
+  }
+  
+  .leaf:before {
+      content:"";
+      position: absolute;
+      border-radius: 50% 0 50% 0;
+      width: 13px;
+      height: 13px;
+      background-color: #e09f3e;
+      left:100px;
+      animation-delay: 1s;
+  }
+  
+  @keyframes fall {
+    0% {top:-50px; transform: translateX(-50px) rotateX(180deg);}
+    100% {top:250px; transform: translateX(150px) rotateX(-180deg);}
+  }
+  
+  .window-sill {
+      position: absolute;
+      width: 400px;
+      height: 20px;
+      border-radius: 20px;
+      background-color: #dda15e;
+      left:-26px;
+      box-shadow: inset 2px 2px 10px rgba(0,0,0,.2), 15px 15px rgba(0,0,0,.2);
+  }
