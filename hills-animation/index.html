@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hills Animation</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="container">
+
+        <!-- sun -->
+        <div id="sun">
+            <svg>
+                <style>
+                    #sunSvg {
+                        fill: none;
+                        stroke-width: 0.5vw;
+                        stroke: #c03a37cc;
+                        stroke-miterlimit: 4;
+                        stroke-dasharray: 0.6vw, 1.2vw;
+                        stroke-dashoffset: 10.00000028;
+                        stroke-linejoin: round;
+                        stroke-linecap: round;
+                        animation: strokeAnimation 5s linear 0s infinite alternate-reverse forwards;
+                    }
+
+                    @keyframes strokeAnimation {
+                        0% {
+                            stroke-dashoffset: 0;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 100;
+                        }
+                    }
+                </style>
+                <rect id="sunSvg" width="100%" height="100%" x="0" y="0" rx="100%" />
+            </svg>
+        </div>
+
+        <!-- clouds -->
+        <!-- cloud 1 -->
+        <div class="cloudContainer" id="cloud1Container">
+            <div class="cloud" id="cloud1Top"></div>
+            <div class="cloud" id="cloud1Mid"></div>
+            <div class="cloud" id="cloud1Bot"></div>
+        </div>
+
+        <!-- cloud 2 -->
+        <div class="cloudContainer" id="cloud2Container">
+            <div class="cloud" id="cloud2Top"></div>
+            <div class="cloud" id="cloud2Mid"></div>
+            <div class="cloud" id="cloud2Bot"></div>
+        </div>
+
+        <!-- cloud 3 -->
+        <div class="cloudContainer" id="cloud3Container">
+            <div class="cloud" id="cloud3Top"></div>
+            <div class="cloud" id="cloud3Mid"></div>
+            <div class="cloud" id="cloud3Bot"></div>
+        </div>
+
+        <!-- cloud 4 -->
+        <div class="cloudContainer" id="cloud4Container">
+            <div class="cloud" id="cloud4Top"></div>
+            <div class="cloud" id="cloud4Mid"></div>
+            <div class="cloud" id="cloud4Bot"></div>
+        </div>
+
+        <!-- cloud 5 -->
+        <div class="cloudContainer" id="cloud5Container">
+            <div class="cloud" id="cloud5Top"></div>
+            <div class="cloud" id="cloud5Mid"></div>
+            <div class="cloud" id="cloud5Bot"></div>
+        </div>
+
+        <!-- comets -->
+        <!-- comet 1 -->
+        <div id="comet1Rotate">
+            <div class="cometContainer" id="comet1Container">
+                <div id="cometTail">
+                    <div class="comets" id="cometTop"></div>
+                    <div class="comets" id="cometBot"></div>
+                </div>
+                <div class="comets" id="cometHead"></div>
+            </div>
+        </div>
+
+        <!-- comet 2 -->
+        <div id="comet1Rotate">
+            <div class="cometContainer" id="comet2Container">
+                <div id="cometTail">
+                    <div class="comets" id="cometTop"></div>
+                    <div class="comets" id="cometBot"></div>
+                </div>
+                <div class="comets" id="cometHead"></div>
+            </div>
+        </div>
+
+        <!-- windmills -->
+        <!-- windmill 1 -->
+        <div class="windmillContainer" id="windmill1Container">
+            <div class="windmillBaseContainer">
+                <div class="windmillLegLeft windmillLeg"></div>
+                <div class="windmillLegRight windmillLeg"></div>
+            </div>
+            <div class="fanContainer">
+                <div class="windmillFanContainer" id="windmill1FanContainer">
+                    <div class="fan fan1">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                    <div class="fan fan2">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="windmillCircle"></div>
+        </div>
+
+        <!-- windmill 2 -->
+        <div class="windmillContainer" id="windmill2Container">
+            <div class="windmillBaseContainer">
+                <div class="windmillLegLeft windmillLeg"></div>
+                <div class="windmillLegRight windmillLeg"></div>
+            </div>
+            <div class="fanContainer">
+                <div class="windmillFanContainer" id="windmill2FanContainer">
+                    <div class="fan fan1">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                    <div class="fan fan2">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="windmillCircle"></div>
+        </div>
+
+        <!-- windmill 3 -->
+        <div class="windmillContainer" id="windmill3Container">
+            <div class="windmillBaseContainer">
+                <div class="windmillLegLeft windmillLeg"></div>
+                <div class="windmillLegRight windmillLeg"></div>
+            </div>
+            <div class="fanContainer">
+                <div class="windmillFanContainer" id="windmill3FanContainer">
+                    <div class="fan fan1">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                    <div class="fan fan2">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="windmillCircle"></div>
+        </div>
+
+        <!-- windmill 4 -->
+        <div class="windmillContainer" id="windmill4Container">
+            <div class="windmillBaseContainer">
+                <div class="windmillLegLeft windmillLeg"></div>
+                <div class="windmillLegRight windmillLeg"></div>
+            </div>
+            <div class="fanContainer">
+                <div class="windmillFanContainer" id="windmill4FanContainer">
+                    <div class="fan fan1">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                    <div class="fan fan2">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="windmillCircle"></div>
+        </div>
+
+        <!-- windmill 5 -->
+        <div class="windmillContainer" id="windmill5Container">
+            <div class="windmillBaseContainer">
+                <div class="windmillLegLeft windmillLeg"></div>
+                <div class="windmillLegRight windmillLeg"></div>
+            </div>
+            <div class="fanContainer">
+                <div class="windmillFanContainer" id="windmill5FanContainer">
+                    <div class="fan fan1">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                    <div class="fan fan2">
+                        <div class="wing wing1"></div>
+                        <div class="wing wing2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="windmillCircle"></div>
+        </div>
+
+        <!-- hills -->
+        <!-- hill 6 -->
+        <div class="hill" id="hill6">
+            <div class="road"></div>
+            <div class="road roadClip" Clip></div>
+
+            <svg>
+                <style>
+                    rect {
+                        fill: none;
+                        stroke-width: 0.2vw;
+                        stroke: #ffffff55;
+                        stroke-miterlimit: 4;
+                        stroke-dasharray: 0.6vw, 0.6vw;
+                        stroke-dashoffset: 10.00000028;
+                        stroke-linejoin: round;
+                        stroke-linecap: round;
+                        animation: strokeAnimation 5s linear 0s infinite alternate forwards;
+                    }
+                </style>
+                <rect width="100%" height="100%" x="0" y="0.1vw" rx="8vw" />
+            </svg>
+
+            <div class="lines">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+                <div class="line line4"></div>
+                <div class="line line5"></div>
+                <div class="line line6"></div>
+                <div class="line line7"></div>
+                <div class="line line8"></div>
+                <div class="line line9"></div>
+                <div class="line line10"></div>
+                <div class="line line11"></div>
+                <div class="line line12"></div>
+                <div class="line line13"></div>
+                <div class="line line14"></div>
+                <div class="line line15"></div>
+                <div class="line line16"></div>
+            </div>
+
+        </div>
+
+        <!-- hill 5 -->
+        <div class="hill" id="hill5">
+            <div class="road"></div>
+            <div class="road roadClip" Clip></div>
+
+            <svg>
+                <rect width="100%" height="100%" x="0" y="0.1vw" rx="10vw" />
+            </svg>
+
+            <div class="lines">
+                <div class="lineReverse line1Reverse"></div>
+                <div class="lineReverse line2Reverse"></div>
+                <div class="lineReverse line3Reverse"></div>
+                <div class="lineReverse line4Reverse"></div>
+                <div class="lineReverse line5Reverse"></div>
+                <div class="lineReverse line6Reverse"></div>
+                <div class="lineReverse line7Reverse"></div>
+                <div class="lineReverse line8Reverse"></div>
+                <div class="lineReverse line9Reverse"></div>
+                <div class="lineReverse line10Reverse"></div>
+                <div class="lineReverse line11Reverse"></div>
+                <div class="lineReverse line12Reverse"></div>
+                <div class="lineReverse line13Reverse"></div>
+                <div class="lineReverse line14Reverse"></div>
+                <div class="lineReverse line15Reverse"></div>
+                <div class="lineReverse line16Reverse"></div>
+            </div>
+
+        </div>
+
+        <!-- hill 4 -->
+        <div class="hill" id="hill4">
+            <div class="road"></div>
+            <div class="road roadClip" Clip></div>
+
+            <svg>
+                <rect width="100%" height="100%" x="0" y="0.1vw" rx="10vw" />
+            </svg>
+
+            <div class="lines">
+                <div class="lineReverse line1Reverse"></div>
+                <div class="lineReverse line2Reverse"></div>
+                <div class="lineReverse line3Reverse"></div>
+                <div class="lineReverse line4Reverse"></div>
+                <div class="lineReverse line5Reverse"></div>
+                <div class="lineReverse line6Reverse"></div>
+                <div class="lineReverse line7Reverse"></div>
+                <div class="lineReverse line8Reverse"></div>
+                <div class="lineReverse line9Reverse"></div>
+                <div class="lineReverse line10Reverse"></div>
+                <div class="lineReverse line11Reverse"></div>
+                <div class="lineReverse line12Reverse"></div>
+                <div class="lineReverse line13Reverse"></div>
+                <div class="lineReverse line14Reverse"></div>
+                <div class="lineReverse line15Reverse"></div>
+                <div class="lineReverse line16Reverse"></div>
+            </div>
+
+        </div>
+
+        <!-- hill 3 -->
+        <div class="hill" id="hill3">
+            <div class="road"></div>
+            <div class="road roadClip" Clip></div>
+
+            <svg>
+                <rect width="100%" height="100%" x="0" y="0.1vw" rx="10vw" />
+            </svg>
+
+            <div class="lines">
+                <div class="lineReverse line1Reverse"></div>
+                <div class="lineReverse line2Reverse"></div>
+                <div class="lineReverse line3Reverse"></div>
+                <div class="lineReverse line4Reverse"></div>
+                <div class="lineReverse line5Reverse"></div>
+                <div class="lineReverse line6Reverse"></div>
+                <div class="lineReverse line7Reverse"></div>
+                <div class="lineReverse line8Reverse"></div>
+                <div class="lineReverse line9Reverse"></div>
+                <div class="lineReverse line10Reverse"></div>
+                <div class="lineReverse line11Reverse"></div>
+                <div class="lineReverse line12Reverse"></div>
+                <div class="lineReverse line13Reverse"></div>
+                <div class="lineReverse line14Reverse"></div>
+                <div class="lineReverse line15Reverse"></div>
+                <div class="lineReverse line16Reverse"></div>
+            </div>
+
+        </div>
+
+        <!-- hill 2 -->
+        <div class="hill" id="hill2">
+            <div class="road"></div>
+            <div class="road roadClip" Clip></div>
+
+            <svg>
+                <rect width="100%" height="100%" x="0" y="0.1vw" rx="10vw" />
+            </svg>
+
+            <div class="lines">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+                <div class="line line4"></div>
+                <div class="line line5"></div>
+                <div class="line line6"></div>
+                <div class="line line7"></div>
+                <div class="line line8"></div>
+                <div class="line line9"></div>
+                <div class="line line10"></div>
+                <div class="line line11"></div>
+                <div class="line line12"></div>
+                <div class="line line13"></div>
+                <div class="line line14"></div>
+                <div class="line line15"></div>
+                <div class="line line16"></div>
+            </div>
+
+        </div>
+
+        <!-- hill 1 -->
+        <div class="hill" id="hill1">
+            <div class="road"></div>
+            <div class="road roadClip" Clip></div>
+
+            <svg>
+                <rect width="100%" height="100%" x="0" y="0.1vw" rx="10vw" />
+            </svg>
+
+            <div class="lines">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+                <div class="line line4"></div>
+                <div class="line line5"></div>
+                <div class="line line6"></div>
+                <div class="line line7"></div>
+                <div class="line line8"></div>
+                <div class="line line9"></div>
+                <div class="line line10"></div>
+                <div class="line line11"></div>
+                <div class="line line12"></div>
+                <div class="line line13"></div>
+                <div class="line line14"></div>
+                <div class="line line15"></div>
+                <div class="line line16"></div>
+            </div>
+
+        </div>
+
+        <!-- house one 2 -->
+        <div class="houseOneContainer" id="houseOneContainer2">
+            <div class="houseOneLeft">
+                <div class="houseOneLeftDoor"></div>
+                <div class="houseOneLeftWindow">
+                    <div class="houseOneLeftWindowTop">
+                        <div class="houseOneLeftWindowLeft"></div>
+                        <div class="houseOneLeftWindowRight"></div>
+                    </div>
+                    <div class="houseOneLeftWindowBottom"></div>
+                </div>
+            </div>
+            <div class="houseOneRight">
+                <div class="houseOneRightWindowLeft1"></div>
+                <div class="houseOneRightWindowLeft2"></div>
+                <div class="houseOneRightWindowMid1"></div>
+                <div class="houseOneRightWindowMid2"></div>
+                <div class="houseOneRightWindowMid3"></div>
+                <div class="houseOneRightDoor1"></div>
+                <div class="houseOneRightDoor2"></div>
+                <div class="houseOneRightWindowRight1"></div>
+                <div class="houseOneRightWindowRight2"></div>
+                <div class="houseOneRightWindowRight3"></div>
+            </div>
+        </div>
+
+        <!-- kite 3 -->
+        <div class="kite">
+            <div class="kiteWire" id="kite3Wire">
+                <div class="kiteContainer" id="kite3Container">
+                    <div class="kiteTail">
+                        <div class="kite3 kiteTop"></div>
+                        <div class="kite3 kiteBot"></div>
+                    </div>
+                    <div class="kite3 kiteHead"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bush 3 -->
+        <div class="bushContainer" id="bush3Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- house one 1 -->
+        <div class="houseOneContainer" id="houseOneContainer1">
+            <div class="houseOneLeft">
+                <div class="houseOneLeftDoor"></div>
+                <div class="houseOneLeftWindow">
+                    <div class="houseOneLeftWindowTop">
+                        <div class="houseOneLeftWindowLeft"></div>
+                        <div class="houseOneLeftWindowRight"></div>
+                    </div>
+                    <div class="houseOneLeftWindowBottom"></div>
+                </div>
+            </div>
+            <div class="houseOneRight">
+                <div class="houseOneRightWindowLeft1"></div>
+                <div class="houseOneRightWindowLeft2"></div>
+                <div class="houseOneRightWindowMid1"></div>
+                <div class="houseOneRightWindowMid2"></div>
+                <div class="houseOneRightWindowMid3"></div>
+                <div class="houseOneRightDoor1"></div>
+                <div class="houseOneRightDoor2"></div>
+                <div class="houseOneRightWindowRight1"></div>
+                <div class="houseOneRightWindowRight2"></div>
+                <div class="houseOneRightWindowRight3"></div>
+            </div>
+        </div>
+
+        <!-- bush 2 -->
+        <div class="bushContainer" id="bush2Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- house one 4 -->
+        <div class="houseOneContainer" id="houseOneContainer4">
+            <div class="houseOneLeft">
+                <div class="houseOneLeftDoor"></div>
+                <div class="houseOneLeftWindow">
+                    <div class="houseOneLeftWindowTop">
+                        <div class="houseOneLeftWindowLeft"></div>
+                        <div class="houseOneLeftWindowRight"></div>
+                    </div>
+                    <div class="houseOneLeftWindowBottom"></div>
+                </div>
+            </div>
+            <div class="houseOneRight">
+                <div class="houseOneRightWindowLeft1"></div>
+                <div class="houseOneRightWindowLeft2"></div>
+                <div class="houseOneRightWindowMid1"></div>
+                <div class="houseOneRightWindowMid2"></div>
+                <div class="houseOneRightWindowMid3"></div>
+                <div class="houseOneRightDoor1"></div>
+                <div class="houseOneRightDoor2"></div>
+                <div class="houseOneRightWindowRight1"></div>
+                <div class="houseOneRightWindowRight2"></div>
+                <div class="houseOneRightWindowRight3"></div>
+            </div>
+        </div>
+
+        <!-- Christmas tree 22 -->
+        <div class="ChrisTreeContainer" id="ChrisTree22Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 23 -->
+        <div class="ChrisTreeContainer" id="ChrisTree23Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+        <!-- Christmas tree 24 -->
+        <div class="ChrisTreeContainer" id="ChrisTree24Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- kite 2 -->
+        <div class="kite">
+            <div class="kiteWire" id="kite2Wire">
+                <div class="kiteContainer" id="kite2Container">
+                    <div class="kiteTail">
+                        <div class="kite2 kiteTop"></div>
+                        <div class="kite2 kiteBot"></div>
+                    </div>
+                    <div class="kite2 kiteHead"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- house one 3 -->
+        <div class="houseOneContainer" id="houseOneContainer3">
+            <div class="houseOneLeft">
+                <div class="houseOneLeftDoor"></div>
+                <div class="houseOneLeftWindow">
+                    <div class="houseOneLeftWindowTop">
+                        <div class="houseOneLeftWindowLeft"></div>
+                        <div class="houseOneLeftWindowRight"></div>
+                    </div>
+                    <div class="houseOneLeftWindowBottom"></div>
+                </div>
+            </div>
+            <div class="houseOneRight">
+                <div class="houseOneRightWindowLeft1"></div>
+                <div class="houseOneRightWindowLeft2"></div>
+                <div class="houseOneRightWindowMid1"></div>
+                <div class="houseOneRightWindowMid2"></div>
+                <div class="houseOneRightWindowMid3"></div>
+                <div class="houseOneRightDoor1"></div>
+                <div class="houseOneRightDoor2"></div>
+                <div class="houseOneRightWindowRight1"></div>
+                <div class="houseOneRightWindowRight2"></div>
+                <div class="houseOneRightWindowRight3"></div>
+            </div>
+        </div>
+
+        <!-- Christmas tree 14 -->
+        <div class="ChrisTreeContainer" id="ChrisTree14Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 15 -->
+        <div class="ChrisTreeContainer" id="ChrisTree15Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 16 -->
+        <div class="ChrisTreeContainer" id="ChrisTree16Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 17 -->
+        <div class="ChrisTreeContainer" id="ChrisTree17Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 18 -->
+        <div class="ChrisTreeContainer" id="ChrisTree18Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- bush 11 -->
+        <div class="bushContainer" id="bush11Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 12 -->
+        <div class="bushContainer" id="bush12Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 13 -->
+        <div class="bushContainer" id="bush13Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- kite 1 -->
+        <div class="kite">
+            <div class="kiteWire" id="kite1Wire">
+                <div class="kiteContainer" id="kite1Container">
+                    <div class="kiteTail">
+                        <div class="kite1 kiteTop"></div>
+                        <div class="kite1 kiteBot"></div>
+                    </div>
+                    <div class="kite1 kiteHead"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bush 4 -->
+        <div class="bushContainer" id="bush4Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 5 -->
+        <div class="bushContainer" id="bush5Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- house two 1 -->
+        <div class="houseTwoContainer" id="houseTwoContainer1">
+            <div class="houseTwoLeft">
+                <div class="houseTwoLeftTop">
+                    <div class="houseTwoLeftTopWindow"></div>
+                    <div class="houseTwoLeftTopWindow"></div>
+                    <div class="houseTwoLeftTopWindow"></div>
+                    <div class="houseTwoLeftTopWindow"></div>
+                </div>
+                <div class="houseTwoLeftBottom">
+                    <div class="houseTwoLeftBottomWindow"></div>
+                    <div class="houseTwoLeftBottomWindow"></div>
+                    <div class="houseTwoLeftBottomWindow"></div>
+                    <div class="houseTwoLeftBottomWindow"></div>
+                </div>
+            </div>
+            <div class="houseTwoRight">
+                <div class="houseTwoRightLeft">
+                    <div class="houseTwoRightLeftWindow"></div>
+                    <div class="houseTwoRightLeftWindow"></div>
+                    <div class="houseTwoRightLeftWindow"></div>
+                    <div class="houseTwoRightLeftWindow"></div>
+                </div>
+                <div class="houseTwoRightDoor"></div>
+            </div>
+            <div class="houseTwoMiddle">
+                <div class="houseTwoMiddleTop">
+                    <div class="houseTwoMiddleTopWindow"></div>
+                    <div class="houseTwoMiddleTopWindow"></div>
+                </div>
+                <div class="houseTwoMiddleMiddle">
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                </div>
+                <div class="houseTwoMiddleBottom">
+                    <div class="houseTwoMiddleBottomWindow"></div>
+                    <div class="houseTwoMiddleBottomWindow"></div>
+                </div>
+                <div class="houseTwoMiddleDoor1"></div>
+                <div class="houseTwoMiddleDoor2"></div>
+            </div>
+        </div>
+
+        <!-- Christmas tree 5 -->
+        <div class="ChrisTreeContainer" id="ChrisTree5Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 6 -->
+        <div class="ChrisTreeContainer" id="ChrisTree6Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 7 -->
+        <div class="ChrisTreeContainer" id="ChrisTree7Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 8 -->
+        <div class="ChrisTreeContainer" id="ChrisTree8Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- bush 6 -->
+        <div class="bushContainer" id="bush6Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 14 -->
+        <div class="bushContainer" id="bush14Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 16 -->
+        <div class="bushContainer" id="bush16Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- house two 2 -->
+        <div class="houseTwoContainer" id="houseTwoContainer2">
+            <div class="houseTwoLeft">
+                <div class="houseTwoLeftTop">
+                    <div class="houseTwoLeftTopWindow"></div>
+                    <div class="houseTwoLeftTopWindow"></div>
+                    <div class="houseTwoLeftTopWindow"></div>
+                    <div class="houseTwoLeftTopWindow"></div>
+                </div>
+                <div class="houseTwoLeftBottom">
+                    <div class="houseTwoLeftBottomWindow"></div>
+                    <div class="houseTwoLeftBottomWindow"></div>
+                    <div class="houseTwoLeftBottomWindow"></div>
+                    <div class="houseTwoLeftBottomWindow"></div>
+                </div>
+            </div>
+            <div class="houseTwoRight">
+                <div class="houseTwoRightLeft">
+                    <div class="houseTwoRightLeftWindow"></div>
+                    <div class="houseTwoRightLeftWindow"></div>
+                    <div class="houseTwoRightLeftWindow"></div>
+                    <div class="houseTwoRightLeftWindow"></div>
+                </div>
+                <div class="houseTwoRightDoor"></div>
+            </div>
+            <div class="houseTwoMiddle">
+                <div class="houseTwoMiddleTop">
+                    <div class="houseTwoMiddleTopWindow"></div>
+                    <div class="houseTwoMiddleTopWindow"></div>
+                </div>
+                <div class="houseTwoMiddleMiddle">
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                    <div class="houseTwoMiddleMiddleWindow"></div>
+                </div>
+                <div class="houseTwoMiddleBottom">
+                    <div class="houseTwoMiddleBottomWindow"></div>
+                    <div class="houseTwoMiddleBottomWindow"></div>
+                </div>
+                <div class="houseTwoMiddleDoor1"></div>
+                <div class="houseTwoMiddleDoor2"></div>
+            </div>
+        </div>
+
+        <!-- Christmas tree 19 -->
+        <div class="ChrisTreeContainer" id="ChrisTree19Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 20 -->
+        <div class="ChrisTreeContainer" id="ChrisTree20Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 21 -->
+        <div class="ChrisTreeContainer" id="ChrisTree21Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- bush 7 -->
+        <div class="bushContainer" id="bush7Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- house Three 1 -->
+        <div class="houseThreeContainer" id="houseThreeContainer1">
+            <div class="houseThreeLeft">
+                <div class="houseThreeLeftTopLeft">
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                </div>
+                <div class="houseThreeLeftTopRight">
+                    <div class="houseThreeLeftTopRightWindow"></div>
+                    <div class="houseThreeLeftTopRightWindow"></div>
+                    <div class="houseThreeLeftTopRightWindow"></div>
+                </div>
+                <div class="houseThreeLeftBottom">
+                    <div class="houseThreeLeftBottomWindow"></div>
+                    <div class="houseThreeLeftBottomWindow"></div>
+                    <div class="houseThreeLeftBottomWindow"></div>
+                </div>
+                <div class="houseThreeLeftDoor"></div>
+            </div>
+            <div class="houseThreeRight">
+                <div class="houseThreeRightRight">
+                    <div class="houseThreeRightRightWindow"></div>
+                    <div class="houseThreeRightRightWindow"></div>
+                    <div class="houseThreeRightRightWindow"></div>
+                </div>
+                <div class="houseThreeLeftRightTop"></div>
+                <div class="houseThreeLeftRightBottom">
+                    <div class="houseThreeLeftRightBottomWindow"></div>
+                    <div class="houseThreeLeftRightBottomWindow"></div>
+                </div>
+            </div>
+            <div class="houseThreeMiddle">
+                <div class="houseThreeMiddleLeft">
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                </div>
+                <div class="houseThreeMiddleRight">
+                    <div class="houseThreeMiddleRightWindow"></div>
+                    <div class="houseThreeMiddleRightWindow"></div>
+                </div>
+                <div class="houseThreeMiddleDoor"></div>
+            </div>
+        </div>
+
+        <!-- Christmas tree 9 -->
+        <div class="ChrisTreeContainer" id="ChrisTree9Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 10 -->
+        <div class="ChrisTreeContainer" id="ChrisTree10Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 11 -->
+        <div class="ChrisTreeContainer" id="ChrisTree11Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 12 -->
+        <div class="ChrisTreeContainer" id="ChrisTree12Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 13 -->
+        <div class="ChrisTreeContainer" id="ChrisTree13Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- bush 8 -->
+        <div class="bushContainer" id="bush8Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 9 -->
+        <div class="bushContainer" id="bush9Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 10 -->
+        <div class="bushContainer" id="bush10Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- house Three 2 -->
+        <div class="houseThreeContainer" id="houseThreeContainer2">
+            <div class="houseThreeLeft">
+                <div class="houseThreeLeftTopLeft">
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                    <div class="houseThreeLeftTopLeftWindow"></div>
+                </div>
+                <div class="houseThreeLeftTopRight">
+                    <div class="houseThreeLeftTopRightWindow"></div>
+                    <div class="houseThreeLeftTopRightWindow"></div>
+                    <div class="houseThreeLeftTopRightWindow"></div>
+                </div>
+                <div class="houseThreeLeftBottom">
+                    <div class="houseThreeLeftBottomWindow"></div>
+                    <div class="houseThreeLeftBottomWindow"></div>
+                    <div class="houseThreeLeftBottomWindow"></div>
+                </div>
+                <div class="houseThreeLeftDoor"></div>
+            </div>
+            <div class="houseThreeRight">
+                <div class="houseThreeRightRight">
+                    <div class="houseThreeRightRightWindow"></div>
+                    <div class="houseThreeRightRightWindow"></div>
+                    <div class="houseThreeRightRightWindow"></div>
+                </div>
+                <div class="houseThreeLeftRightTop"></div>
+                <div class="houseThreeLeftRightBottom">
+                    <div class="houseThreeLeftRightBottomWindow"></div>
+                    <div class="houseThreeLeftRightBottomWindow"></div>
+                </div>
+            </div>
+            <div class="houseThreeMiddle">
+                <div class="houseThreeMiddleLeft">
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                    <div class="houseThreeMiddleLeftWindow"></div>
+                </div>
+                <div class="houseThreeMiddleRight">
+                    <div class="houseThreeMiddleRightWindow"></div>
+                    <div class="houseThreeMiddleRightWindow"></div>
+                </div>
+                <div class="houseThreeMiddleDoor"></div>
+            </div>
+        </div>
+
+        <!-- Christmas tree 1 -->
+        <div class="ChrisTreeContainer" id="ChrisTree1Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 2 -->
+        <div class="ChrisTreeContainer" id="ChrisTree2Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 3 -->
+        <div class="ChrisTreeContainer" id="ChrisTree3Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- Christmas tree 4 -->
+        <div class="ChrisTreeContainer" id="ChrisTree4Container">
+            <div class="ChrisTreeLeavesContainer">
+                <div class="ChrisTreeLeave ChrisTreeLeave1"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave2"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave3"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave4"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave5"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave6"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave7"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave8"></div>
+                <div class="ChrisTreeLeave ChrisTreeLeave9"></div>
+            </div>
+            <div class="ChrisTreeTrunk"></div>
+        </div>
+
+        <!-- tarctor 1-->
+        <div class="tractorContainer" id="tractorContainer1">
+            <div class="tractorBody">
+                <div class="engine">
+                    <div class="exhaust">
+                        <div class="exhaustTop"></div>
+                        <div class="exhaustBottom"></div>
+                    </div>
+                    <div class="grill">
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                    </div>
+                </div>
+                <div class="drive">
+                    <div class="driveLeft"></div>
+                    <div class="driveRight"></div>
+                    <div class="driveGlass">
+                        <div class="driveGlassRight"></div>
+                        <div class="driveGlassLeft"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigWheel">
+                <div class="bigWheelMetal"></div>
+            </div>
+            <div class="smallWheel">
+                <div class="smallWheelMetal"></div>
+            </div>
+        </div>
+
+        <!-- tarctor 2-->
+        <div class="tractorContainer" id="tractorContainer2">
+            <div class="tractorBody">
+                <div class="engine">
+                    <div class="exhaust">
+                        <div class="exhaustTop"></div>
+                        <div class="exhaustBottom"></div>
+                    </div>
+                    <div class="grill">
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                    </div>
+                </div>
+                <div class="drive">
+                    <div class="driveLeft"></div>
+                    <div class="driveRight"></div>
+                    <div class="driveGlass">
+                        <div class="driveGlassRight"></div>
+                        <div class="driveGlassLeft"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigWheel">
+                <div class="bigWheelMetal"></div>
+            </div>
+            <div class="smallWheel">
+                <div class="smallWheelMetal"></div>
+            </div>
+        </div>
+
+        <!-- tarctor 3-->
+        <div class="tractorContainer" id="tractorContainer3">
+            <div class="tractorBody">
+                <div class="engine">
+                    <div class="exhaust">
+                        <div class="exhaustTop"></div>
+                        <div class="exhaustBottom"></div>
+                    </div>
+                    <div class="grill">
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                    </div>
+                </div>
+                <div class="drive">
+                    <div class="driveLeft"></div>
+                    <div class="driveRight"></div>
+                    <div class="driveGlass">
+                        <div class="driveGlassRight"></div>
+                        <div class="driveGlassLeft"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigWheel">
+                <div class="bigWheelMetal"></div>
+            </div>
+            <div class="smallWheel">
+                <div class="smallWheelMetal"></div>
+            </div>
+        </div>
+
+        <!-- tarctor 4-->
+        <div class="tractorContainer" id="tractorContainer4">
+            <div class="tractorBody">
+                <div class="engine">
+                    <div class="exhaust">
+                        <div class="exhaustTop"></div>
+                        <div class="exhaustBottom"></div>
+                    </div>
+                    <div class="grill">
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                    </div>
+                </div>
+                <div class="drive">
+                    <div class="driveLeft"></div>
+                    <div class="driveRight"></div>
+                    <div class="driveGlass">
+                        <div class="driveGlassRight"></div>
+                        <div class="driveGlassLeft"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigWheel">
+                <div class="bigWheelMetal"></div>
+            </div>
+            <div class="smallWheel">
+                <div class="smallWheelMetal"></div>
+            </div>
+        </div>
+
+        <!-- tarctor 5-->
+        <div class="tractorContainer" id="tractorContainer5">
+            <div class="tractorBody">
+                <div class="engine">
+                    <div class="exhaust">
+                        <div class="exhaustTop"></div>
+                        <div class="exhaustBottom"></div>
+                    </div>
+                    <div class="grill">
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                        <div class="grillItem"></div>
+                    </div>
+                </div>
+                <div class="drive">
+                    <div class="driveLeft"></div>
+                    <div class="driveRight"></div>
+                    <div class="driveGlass">
+                        <div class="driveGlassRight"></div>
+                        <div class="driveGlassLeft"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigWheel">
+                <div class="bigWheelMetal"></div>
+            </div>
+            <div class="smallWheel">
+                <div class="smallWheelMetal"></div>
+            </div>
+        </div>
+
+        <!-- bush 15 -->
+        <div class="bushContainer" id="bush15Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- bush 1 -->
+        <div class="bushContainer" id="bush1Container">
+            <div class="bushLeft"></div>
+            <div class="bushRight"></div>
+            <div class="bushMid"></div>
+        </div>
+
+        <!-- tree 2 -->
+        <div class="treeContainer" id="tree2Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 1 -->
+        <div class="treeContainer" id="tree1Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 3 -->
+        <div class="treeContainer" id="tree3Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 4 -->
+        <div class="treeContainer" id="tree4Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 5 -->
+        <div class="treeContainer" id="tree5Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 6 -->
+        <div class="treeContainer" id="tree6Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 7 -->
+        <div class="treeContainer" id="tree7Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 8 -->
+        <div class="treeContainer" id="tree8Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 9 -->
+        <div class="treeContainer" id="tree9Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+
+        <!-- tree 13 -->
+        <div class="treeContainer" id="tree13Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 10 -->
+        <div class="treeContainer" id="tree10Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 11 -->
+        <div class="treeContainer" id="tree11Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 12 -->
+        <div class="treeContainer" id="tree12Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+
+        <!-- tree 14 -->
+        <div class="treeContainer" id="tree14Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 16 -->
+        <div class="treeContainer" id="tree16Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 15 -->
+        <div class="treeContainer" id="tree15Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- tree 17 -->
+        <div class="treeContainer" id="tree17Container">
+            <div class="treeLeaves"></div>
+            <div class="treeTrunk"></div>
+        </div>
+
+        <!-- glare -->
+        <div id="glare"></div>
+    </div>
+  </body>
+</html>
