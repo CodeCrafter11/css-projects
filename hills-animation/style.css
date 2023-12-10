@@ -1,0 +1,2261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(12, 0, 24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+svg {
+    position: absolute;
+}
+
+#container {
+    width: 60vw;
+    height: 42.42vw;
+    background: radial-gradient(farthest-corner at 50% 47%, #c44443, #6128a9);
+    overflow: hidden;
+    position: relative;
+}
+
+#sun {
+    width: 27%;
+    height: 34%;
+    background: radial-gradient(farthest-corner at 50% 50%, #db9148, #da9351);
+    border-radius: 50%;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#sun svg {
+    width: 100%;
+    height: 100%;
+    right: 0;
+}
+
+#glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(closest-side at 50% 50%, #c74d4455, #c7744400);
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+}
+
+
+.hill {
+    background: linear-gradient(to bottom, #9037af, #22133e 50%);
+    position: absolute;
+}
+
+.road {
+    background: linear-gradient(to bottom, #6a1d81, #1e052c 50%);
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.roadClip {
+    background: linear-gradient(to bottom, #9037af, #22133e 50%);
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+#hill1 {
+    width: 67%;
+    height: 40%;
+    left: 0;
+    top: 85%;
+    border-top-right-radius: 10vw;
+    overflow: hidden;
+}
+
+#hill1 svg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    right: 0;
+    top: 0;
+}
+
+#hill1 .road {
+    width: 25%;
+    right: 18%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+#hill1 .roadClip {
+    width: 15%;
+    right: 35%;
+}
+
+#hill2 {
+    width: 66%;
+    height:40%;
+    right: 0;
+    top: 73%;
+    border-top-left-radius: 10vw;
+    overflow: hidden;
+}
+
+#hill2 svg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+}
+
+#hill2 .road {
+    width: 30%;
+    left: 6%;
+    transform: skew(-30deg);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#hill2 .roadClip {
+    width: 20%;
+    left: 22%;
+}
+
+#hill3 {
+    width: 77%;
+    height: 40%;
+    left: 0;
+    top: 62%;
+    border-top-right-radius: 10vw;
+    overflow: hidden;
+}
+
+#hill3 svg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    right: 0;
+}
+
+#hill3 .road {
+    width: 21%;
+    right: 10%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform: skew(20deg);
+}
+
+#hill3 .roadClip {
+    width: 13%;
+    right: 21%;
+}
+
+#hill4 {
+    width: 77%;
+    height: 25%;
+    right: 0;
+    top: 55%;
+    border-top-left-radius: 10vw;
+    overflow: hidden;
+}
+
+#hill4 svg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+}
+
+#hill4 .road {
+    width: 20%;
+    left: 29%;
+    transform: skew(-25deg);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#hill4 .roadClip {
+    width: 15%;
+    left: 38%;
+}
+
+#hill5 {
+    width: 74%;
+    height: 40%;
+    left: 0;
+    top: 50%;
+    border-top-right-radius: 10vw;
+    overflow: hidden;
+}
+
+#hill5 svg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    right: 0;
+}
+
+#hill5 .road {
+    width: 15%;
+    right: 6%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform: skew(25deg);
+}
+
+#hill5 .roadClip {
+    width: 10%;
+    right: 12%;
+}
+
+#hill6 {
+    width: 68%;
+    height: 50%;
+    right: 0;
+    top: 47%;
+    border-top-left-radius: 8vw;
+    overflow: hidden;
+}
+
+#hill6 svg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+}
+
+#hill6 .road {
+    width: 25%;
+    left: 15%;
+    transform: skew(-25deg);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#hill6 .roadClip {
+    width: 22%;
+    left: 20%;
+}
+
+
+.lines {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+#hill6 .lines {
+    height: 80%;
+}
+
+#hill4 .lines {
+    height: 160%;
+}
+
+.line, .lineReverse {
+    background-color: #ffffff33;
+    mix-blend-mode: overlay;
+    width: 80%;
+    height: 0.3vw;
+    margin-top: 0.45vw;
+    margin-bottom: 0.45vw;
+    position: relative;
+    top: 0;
+}
+
+#hill .line {
+    z-index: 20;
+    background-color: #ffffff55;  
+}
+
+.line1Reverse {
+    right: 10%;
+}
+
+.line2Reverse {
+    right: 30%;
+}
+
+.line3Reverse {
+    right: -20%;
+}
+
+.line4Reverse {
+    right: 50%;
+}
+
+.line5Reverse {
+    right: -10%;
+}
+
+.line6Reverse {
+    right: 15%;
+}
+
+.line7Reverse {
+    right: 30%;
+}
+
+.line8Reverse {
+    right: -20%;
+}
+
+.line9Reverse {
+    right: 10%;
+}
+
+.line10Reverse {
+    right: 20%;
+}
+
+.line11Reverse {
+    right: 40%;
+}
+
+.line12Reverse {
+    right: -5%;
+}
+
+.line13Reverse {
+    right: 15%;
+}
+
+.line14Reverse {
+    right: 30%;
+}
+
+.line15Reverse {
+    right: 45%;
+}
+
+.line16Reverse {
+    right: -25%;
+}
+
+.line1 {
+    left: 10%;
+}
+
+.line2 {
+    left: 30%;
+}
+
+.line3 {
+    left: -20%;
+}
+
+.line4 {
+    left: 50%;
+}
+
+.line5 {
+    left: -10%;
+}
+
+.line6 {
+    left: 15%;
+}
+
+.line7 {
+    left: 30%;
+}
+
+.line8 {
+    left: -20%;
+}
+
+.line9 {
+    left: 10%;
+}
+
+.line10 {
+    left: 20%;
+}
+
+.line11 {
+    left: 40%;
+}
+
+.line12 {
+    left: -5%;
+}
+
+.line13 {
+    left: 15%;
+}
+
+.line14 {
+    left: 30%;
+}
+
+.line15 {
+    left: 45%;
+}
+
+.line1 {
+    left: -25%;
+}
+
+.houseOneContainer {
+    position: absolute;
+}
+
+.houseTwoContainer {
+    position: absolute;
+}
+
+.houseThreeContainer {
+    position: absolute;
+}
+
+#houseOneContainer1 {
+    bottom: 15%;
+    left: 10%;
+    width: 7vw;
+    height: 2.33vw;
+}
+
+#houseOneContainer2 {
+    bottom: 37.8%;
+    left: 10%;
+    width: 5.8vw;
+    height: 1.93vw;
+    transform: scaleX(-1);
+    opacity: 85%;
+}
+
+#houseOneContainer3 {
+    bottom: 45%;
+    right: 18%;
+    width: 4.9vw;
+    height: 1.63vw;
+    opacity: 75%;
+}
+
+#houseOneContainer4 {
+    bottom: 53%;
+    right: 22%;
+    width: 3vw;
+    height: 1vw;
+    transform: scaleX(-1);
+    opacity: 65%;
+}
+
+#houseTwoContainer1 {
+    bottom: 27%;
+    right: 10%;
+    width: 9vw;
+    height: 2.33vw;
+    opacity: 97%;
+}
+
+#houseTwoContainer2 {
+    bottom: 50%;
+    left: 5%;
+    width: 4.6vw;
+    height: 1.2vw;
+    opacity: 68%;
+    transform: scaleX(-1);
+}
+
+#houseThreeContainer1 {
+    bottom: 38%;
+    left: 30%;
+    width: 7.69vw;
+    height: 2vw;
+    opacity: 85%;
+}
+
+#houseThreeContainer2 {
+    bottom: 50%;
+    left: 38.5%;
+    width: 3.84vw;
+    height: 1vw;
+    opacity: 75%;
+    transform: scaleX(-1);
+}
+
+.houseOneLeft {
+    background-color: #b56693;
+    border-radius: 15%;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.houseOneRight {
+    background-color: #a24977;
+    border-radius: 15%;
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: -12%;
+    bottom: 0;
+}
+
+.houseOneLeftDoor {
+    background-color: #dfa8bf;
+    height: 66%;
+    width: 15%;
+    border-radius: 15%;
+    position: absolute;
+    bottom: 0;
+    left: 12%;
+}
+
+.houseOneLeftWindow {
+    height: 55%;
+    width: 45%;
+    position: absolute;
+    bottom: 20%;
+    right: 22%;
+}
+
+.houseOneLeftWindowTop {
+    width: 100%;
+    height: 50%;
+}
+
+.houseOneLeftWindowRight, .houseOneLeftWindowLeft {
+    background-color: #dfa8bf;
+    width: 30%;
+    height: 50%;
+    position: absolute;
+    border-radius: 30%;
+}
+
+.houseOneLeftWindowRight {
+    top: 0;
+    right: 0;
+}
+
+.houseOneLeftWindowLeft {
+    top: 0;
+    left: 0;
+}
+
+.houseOneLeftWindowBottom {
+    height: 20%;
+    width: 80%;
+    background-color: #dfa8bf;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    border-radius: 20%;
+}
+
+.houseOneRightWindowLeft1, .houseOneRightWindowLeft2 {
+    width: 17%;
+    height: 35%;
+    border-radius: 30%;
+    background-color: #dfa8bf;
+    position: absolute;
+    left: 10%;
+}
+
+.houseOneRightWindowLeft1{
+    top: 10%;
+}
+
+.houseOneRightWindowLeft2{
+    bottom: 10%;
+}
+
+.houseOneRightWindowMid1, .houseOneRightWindowMid2, .houseOneRightWindowMid3 {
+    width: 34%;
+    height: 5%;
+    border-radius: 20%;
+    background-color: #dfa8bf;
+    position: absolute;
+    left: 37%;
+}
+
+.houseOneRightWindowMid1 {
+    top: 10%
+}
+
+.houseOneRightWindowMid2 {
+    top: 20%
+}
+
+.houseOneRightWindowMid3 {
+    top: 30%
+}
+
+.houseOneRightDoor1 {
+    background-color: #dfa8bf;
+    height: 48%;
+    width: 12%;
+    border-radius: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 37%;
+}
+
+.houseOneRightDoor2 {
+    background-color: #dfa8bf;
+    height: 48%;
+    width: 12%;
+    border-radius: 20%;
+    position: absolute;
+    bottom: 0;
+    right: 34%;
+}
+
+.houseOneRightWindowRight1, .houseOneRightWindowRight2, .houseOneRightWindowRight3 {
+    width: 10%;
+    height: 20%;
+    border-radius: 30%;
+    background-color: #dfa8bf;
+    position: absolute;
+    right: 10%;
+}
+
+.houseOneRightWindowRight1{
+    top: 10%;
+}
+
+.houseOneRightWindowRight2{
+    top: 40%;
+}
+
+.houseOneRightWindowRight3{
+    top: 70%;
+}
+
+.houseTwoLeft {
+    background-color: #b56693;
+    border-radius: 15%;
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+}
+
+.houseTwoMiddle {
+    background-color: #a24977;
+    border-radius: 15%;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.houseTwoRight {
+    background-color: #b56693;
+    border-radius: 15%;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+}
+
+.houseTwoLeftTop {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 50%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseTwoLeftTopWindow {
+    width: 20%;
+    height: 100%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseTwoLeftBottom {
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseTwoLeftBottomWindow {
+    width: 100%;
+    height: 10%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseTwoRightLeft {
+    position: absolute;
+    right: 34%;
+    bottom: 20%;
+    width: 30%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseTwoRightLeftWindow {
+    width: 100%;
+    height: 15%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseTwoRightDoor {
+    position: absolute;
+    right: 12%;
+    bottom: 0;
+    width: 15%;
+    height: 70%;
+    border-radius: 20%;
+    background-color: #dfa8bf;
+} 
+
+.houseTwoMiddleTop {
+    position: absolute;
+    right: 10%;
+    top: 12%;
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseTwoMiddleTopWindow {
+    width: 100%;
+    height: 30%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseTwoMiddleMiddle {
+    position: absolute;
+    right: 15%;
+    top: 32%;
+    width: 70%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseTwoMiddleMiddleWindow {
+    width: 16%;
+    height: 100%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseTwoMiddleBottom {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    width: 35%;
+    height: 30%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.houseTwoMiddleBottomWindow {
+    width: 30%;
+    height: 100%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseTwoMiddleDoor1, .houseTwoMiddleDoor2 {
+    position: absolute;
+    bottom: 0;
+    width: 15%;
+    height: 40%;
+    border-radius: 20%;
+    background-color: #dfa8bf;
+}
+
+.houseTwoMiddleDoor1 {
+    right: 12%;
+}
+
+.houseTwoMiddleDoor2 {
+    left: 12%;
+}
+
+.houseThreeLeft {
+    background-color: #b56693;
+    border-radius: 15%;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+}
+
+.houseThreeMiddle {
+    background-color: #a24977;
+    border-radius: 15%;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.houseThreeRight {
+    background-color: #b56693;
+    border-radius: 15%;
+    width: 50%;
+    height: 85%;
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+}
+
+.houseThreeLeftTopLeft {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 35%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeLeftTopLeftWindow {
+    width: 18%;
+    height: 100%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeLeftTopRight {
+    position: absolute;
+    left: 53%;
+    top: 6%;
+    width: 35%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeLeftTopRightWindow {
+    width: 100%;
+    height: 18%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeLeftBottom {
+    position: absolute;
+    left: 35%;
+    top: 60%;
+    width: 30%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeLeftBottomWindow {
+    width: 25%;
+    height: 100%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeLeftDoor {
+    position: absolute;
+    bottom: 0;
+    left: 12%;
+    width: 15%;
+    height: 40%;
+    border-radius: 20%;
+    background-color: #dfa8bf;
+}
+
+.houseThreeRightRight {
+    position: absolute;
+    right: 55%;
+    top: 10%;
+    width: 10%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeRightRightWindow {
+    width: 100%;
+    height: 25%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeLeftRightTop {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    width: 20%;
+    height: 45%;
+    background-color: #dfa8bf;
+    border-radius: 20%; 
+}
+
+.houseThreeLeftRightBottom {
+    position: absolute;
+    top: 60%;
+    right: 20%;
+    width: 20%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeLeftRightBottomWindow {
+    width: 100%;
+    height: 35%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeMiddleLeft {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 30%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeMiddleLeftWindow {
+    width: 100%;
+    height: 18%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeMiddleDoor {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 12%;
+    height: 60%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.houseThreeMiddleRight {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 20%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.houseThreeMiddleRightWindow {
+    width: 40%;
+    height: 100%;
+    background-color: #dfa8bf;
+    border-radius: 20%;
+}
+
+.cloudContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cloud {
+   background-color: ivory;
+   height: 33.33%;
+   border-radius: 0.5vw;
+}
+
+@keyframes cloudAnimation {
+    from {transform: translateX(-300%);}
+    to {transform: translateX(500%);}
+}
+
+#cloud1Container {
+    position: absolute;
+    width: 20vw;
+    height: 5.5vw;
+    top: 7vw;
+    left: -2vw;
+    opacity: 12%;
+    animation: cloudAnimation 15s linear 0s infinite forwards;
+}
+
+#cloud1Top {
+    width: 100%;
+    transform: translateX(-7vw) translateY(0.5vw);
+}
+
+#cloud1Mid {
+    width: 100%;
+    transform: translateX(5vw);
+}
+
+#cloud1Bot {
+    width: 100%;
+    transform: translateX(0vw) translateY(-0.5vw);
+}
+
+#cloud2Container {
+    position: absolute;
+    width: 20vw;
+    height: 5vw;
+    top: 15vw;
+    left: -7vw;
+    opacity: 8%;
+    animation: cloudAnimation 15s linear 0s infinite reverse forwards;
+}
+
+#cloud2Top {
+    width: 100%;
+    transform: translateX(3vw) translateY(0.5vw);
+}
+
+#cloud2Mid {
+    width: 100%;
+    transform: translateX(-5vw);
+}
+
+#cloud2Bot {
+    width: 100%;
+    transform: translateX(0vw) translateY(-0.5vw);
+}
+
+#cloud3Container {
+    position: absolute;
+    width: 25vw;
+    height: 5vw;
+    top: 2vw;
+    left: 15vw;
+    opacity: 9%;
+    animation: cloudAnimation 15s linear 0s infinite forwards;
+}
+
+#cloud3Top {
+    width: 80%;
+    transform: translateX(3vw) translateY(0.5vw);
+}
+
+#cloud3Mid {
+    width: 100%;
+    transform: translateX(0vw);
+}
+
+#cloud3Bot {
+    width: 100%;
+    transform: translateX(5vw) translateY(-0.5vw);
+}
+
+#cloud4Container {
+    position: absolute;
+    width: 25vw;
+    height: 5vw;
+    top: 7vw;
+    right: -5vw;
+    opacity: 9%;
+    animation: cloudAnimation 15s linear 0s infinite reverse forwards;
+}
+
+#cloud4Top {
+    width: 80%;
+    transform: translateX(8vw) translateY(0.5vw);
+}
+
+#cloud4Mid {
+    width: 100%;
+    transform: translateX(0vw);
+}
+
+#cloud4Bot {
+    width: 100%;
+    transform: translateX(4vw) translateY(-0.5vw);
+}
+
+#cloud5Container {
+    position: absolute;
+    width: 30vw;
+    height: 5vw;
+    top: 14vw;
+    right: 7vw;
+    opacity: 9%;
+    animation: cloudAnimation 15s linear 0s infinite forwards;
+}
+
+#cloud5Top {
+    width: 70%;
+    transform: translateX(3vw) translateY(0.5vw);
+}
+
+#cloud5Mid {
+    width: 100%;
+    transform: translateX(-3vw);
+}
+
+#cloud5Bot {
+    width: 100%;
+    transform: translateX(5vw) translateY(-0.5vw);
+}
+
+
+.cometContainer {
+    display: flex;
+    position: absolute;
+}
+
+
+.comets {
+    background-color: #f8edc0;
+}
+
+#comet1Rotate {
+    transform: rotate(25deg);
+}
+
+#comet2Rotate {
+    transform: rotate(40deg);
+}
+
+#comet1Container {
+    width: 24vw;
+    height: 0.3vw;
+    top: 8vw;
+    left: 7vw;
+    opacity: 30%;
+    animation: cometAnimation 10s linear 0s infinite forwards;
+}
+
+#comet2Container {
+    width: 25vw;
+    height: 0.25vw;
+    top: 10vw;
+    left: 4vw;
+    opacity: 40%;
+    animation: cometAnimation 15s linear 0s infinite forwards;
+}
+
+@keyframes cometAnimation {
+    0% {transform: translate(-200%, -150%);}
+    100% {transform: translate(300%, 300%);}
+}
+
+#cometTail {
+    flex-basis: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#cometTop {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 100%;
+}
+
+
+#cometBot {
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 100%;
+}
+
+#cometHead {
+    width: 2.5%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.windmillContainer {
+    position: absolute;
+}
+
+#windmill1Container {
+    width: 2vw;
+    height: 5vw;
+    left: 8vw;
+    bottom: 50%;
+}
+
+#windmill1FanContainer {
+    transform-origin: center center;
+    transform: rotate(0deg);
+}
+
+#windmill2Container {
+    width: 1.8vw;
+    height: 4.5vw;
+    left: 12vw;
+    bottom: 50%;
+}
+
+#windmill2FanContainer {
+    transform-origin: center center;
+    transform: rotate(-50deg);
+}
+
+
+#windmill3Container {
+    width: 1.4vw;
+    height: 3.5vw;
+    left: 18vw;
+    bottom: 50%;
+}
+
+#windmill3FanContainer {
+    transform-origin: center center;
+    transform: rotate(20deg);
+}
+
+#windmill4Container {
+    width: 2vw;
+    height: 5vw;
+    right: 17vw;
+    bottom: 53%;
+}
+
+#windmill4FanContainer {
+    transform-origin: center center;
+    transform: rotate(75deg);
+}
+
+#windmill5Container {
+    width: 1.4vw;
+    height: 3.5vw;
+    right: 5vw;
+    bottom: 53%;
+}
+
+#windmill5FanContainer {
+    transform-origin: center center;
+    transform: rotate(40deg);
+}
+
+.windmillBaseContainer {
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.windmillLeg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    background-color: #042206;
+}
+
+.windmillLegLeft {
+    transform: translateX(-65%) skew(-1deg);
+}
+
+.windmillLegRight {
+    transform: translateX(-45%) skew(1deg);
+}
+
+.windmillFanContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.fanContainer {
+    position: absolute;
+    top: 20%;
+    left: -25%;
+    width: 150%;
+    height: 60%;
+    animation: windmillAnimation 10s linear 0s infinite forwards;
+}
+
+@keyframes windmillAnimation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+.fan {
+    width: 100%;
+    height: 3%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #031605;
+}
+
+.fan1 {
+    transform: rotate(30deg);
+}
+
+.fan2 {
+    transform: rotate(120deg);
+}
+
+.wing {
+    background-color: #083f2d;
+    position: absolute;
+    width: 35%;
+    height: 300%;
+}
+
+.wing1 {
+    bottom: 0;
+    right: -7%;
+}
+
+.wing2 {
+    top: 0;
+    left: -7%;
+}
+
+.windmillCircle {
+    width: 0.4vw;
+    height: 0.4vw;
+    background-color: #083f2d;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+}
+
+
+.kite {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes kiteAnimation {
+    0% {transform: rotate(-20deg);}
+    100% {transform:  rotate(20deg);}
+}
+
+.kiteContainer {
+    display: flex;
+    position: absolute;
+    /* animation: kiteAnimation 2.5s linear 0s infinite alternate forwards; */
+}
+
+
+.kiteWire {
+    background-color: #4a3752;
+    height: 0.007vw;
+    position: absolute;
+}
+
+#kite1Wire {
+    width: 18.2vw;
+    top: 73%;
+    left: 53vw;
+    transform-origin: top left;
+    animation: kite1Wire 2.5s linear 0s infinite alternate forwards;
+}
+
+@keyframes kite1Wire {
+    0% { transform: rotate(-122deg);}
+    100% {transform: rotate(-118deg);}
+}
+
+#kite1Container {
+    width: 1.8vw;
+    height: 0.18vw;
+    top: 0;
+    right: 0;
+    transform: translate(45%, -140%) rotate(90deg);
+    align-items: center;
+}
+
+.kite1 {
+    background-color: rgb(0, 73, 73);
+}
+
+#kite2Wire {
+    width: 16.5vw;
+    top: 55%;
+    left: 45vw;
+    transform-origin: top left;
+    /* transform: rotate(-68deg); */
+    animation: kite2Wire 2.5s linear 0s infinite alternate forwards;
+}
+
+@keyframes kite2Wire {
+    0% { transform: rotate(-66deg);}
+    100% {transform: rotate(-70deg);}
+}
+
+#kite2Container {
+    width: 1.2vw;
+    height: 0.2vw;
+    top: 0;
+    right: 0;
+    transform: translate(45%, 0%) rotate(90deg) scaleX(-1);
+    align-items: center;
+}
+
+.kite2 {
+    background-color: rgb(194, 194, 165);
+}
+
+#kite3Wire {
+    width: 26.1vw;
+    top: 85%;
+    left: 7vw;
+    transform-origin: top left;
+    transform: rotate(-73.5deg);
+    animation: kite3Wire 2.5s linear 0s infinite alternate forwards;
+}
+
+@keyframes kite3Wire {
+    0% { transform: rotate(-75.5deg);}
+    100% {transform: rotate(-71.5deg);}
+}
+
+#kite3Container {
+    width: 2.1vw;
+    height: .22vw;
+    top: 0;
+    right: 0;
+    transform: translate(40%, -150%) rotate(50deg);
+    align-items: center;
+}
+
+.kite3 {
+    background-color: rgb(79, 82, 133);
+}
+
+.kiteTail {
+    flex-basis: 70%;
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.kiteTop {
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 100%;
+}
+
+
+.iteBot {
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 100%;
+}
+
+.kiteHead {
+    flex-basis: 30%;
+    height: 100%;
+    transform: skew(-10deg) rotate(10deg) translateX(-50%) translateY(50%);
+}
+
+
+
+@keyframes bushAnimation {
+    0% {transform: rotate(-3deg);}
+    100% {transform:  rotate(3deg);}
+}
+
+
+@keyframes treeAnimation {
+    0% {transform: rotate(-5deg);}
+    100% {transform:  rotate(5deg);}
+}
+
+.bushContainer {
+    position: absolute;
+    transform-origin: center bottom;
+    animation: treeAnimation 2.5s linear 0s infinite alternate forwards;
+}
+
+#bush1Container {
+    bottom: 15%;
+    left: 48%;
+    width: 1.1vw;
+    height: 0.73vw;
+}
+
+#bush2Container {
+    bottom: 15%;
+    left: 23%;
+    width: 0.9vw;
+    height: 0.6vw;
+}
+
+#bush3Container {
+    bottom: 15%;
+    left: 8%;
+    width: 0.8vw;
+    height: 0.54vw;
+}
+
+#bush4Container {
+    bottom: 27%;
+    right: 46%;
+    width: 0.8vw;
+    height: 0.54vw;
+}
+
+#bush5Container {
+    bottom: 27%;
+    right: 35%;
+    width: 0.75vw;
+    height: 0.50vw;
+}
+
+#bush6Container {
+    bottom: 27%;
+    right: 26%;
+    width: 0.82vw;
+    height: 0.55vw;
+}
+
+#bush7Container {
+    bottom: 38%;
+    left: 48%;
+    width: 0.65vw;
+    height: 0.43vw;
+}
+
+#bush8Container {
+    bottom: 38%;
+    left: 28%;
+    width: 0.65vw;
+    height: 0.43vw;
+}
+
+#bush9Container {
+    bottom: 38%;
+    left: 21%;
+    width: 0.65vw;
+    height: 0.43vw;
+}
+
+#bush10Container {
+    bottom: 38%;
+    left: 6%;
+    width: 0.65vw;
+    height: 0.43vw;
+}
+
+#bush11Container {
+    bottom: 45%;
+    right: 45%;
+    width: 0.55vw;
+    height: 0.34vw;
+}
+
+#bush12Container {
+    bottom: 45%;
+    right: 36%;
+    width: 0.55vw;
+    height: 0.34vw;
+}
+
+#bush13Container {
+    bottom: 45%;
+    right: 5%;
+    width: 0.55vw;
+    height: 0.34vw;
+}
+
+#bush14Container {
+    bottom: 50%;
+    left: 30%;
+    width: 0.48vw;
+    height: 0.32vw;
+}
+
+#bush15Container {
+    bottom: 50%;
+    left: 23%;
+    width: 0.48vw;
+    height: 0.32vw;
+}
+
+#bush16Container {
+    bottom: 50%;
+    left: 1%;
+    width: 0.48vw;
+    height: 0.32vw;
+}
+
+.ChrisTreeContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transform-origin: center bottom;
+    animation: treeAnimation 2.5s linear 0s infinite alternate forwards;
+}
+
+#ChrisTree1Container {
+    bottom: 15%;
+    left: 2%;
+    width: 1.4vw;
+    height: 3.5vw;
+}
+
+#ChrisTree2Container {
+    bottom: 15%;
+    left: 7%;
+    width: 1.32vw;
+    height: 3.3vw;
+}
+
+#ChrisTree3Container {
+    bottom: 15%;
+    left: 28%;
+    width: 0.9vw;
+    height: 2.2vw;
+}
+
+#ChrisTree4Container {
+    bottom: 15%;
+    left: 36%;
+    width: 0.85vw;
+    height: 2.1vw;
+}
+
+#ChrisTree5Container {
+    bottom: 27%;
+    right: 33%;
+    width: 0.8vw;
+    height: 2vw;
+}
+
+#ChrisTree6Container {
+    bottom: 27%;
+    right: 36%;
+    width: 0.72vw;
+    height: 1.8vw;
+}
+
+#ChrisTree7Container {
+    bottom: 27%;
+    right: 10%;
+    width: 0.8vw;
+    height: 2vw;
+}
+
+#ChrisTree8Container {
+    bottom: 27%;
+    right: 5%;
+    width: 0.72vw;
+    height: 1.8vw;
+}
+
+#ChrisTree9Container {
+    bottom: 38%;
+    left: -0.3%;
+    width: 0.68vw;
+    height: 1.7vw;
+}
+
+#ChrisTree10Container {
+    bottom: 38%;
+    left: 21%;
+    width: 0.6vw;
+    height: 1.5vw;
+}
+
+#ChrisTree11Container {
+    bottom: 38%;
+    left: 26%;
+    width: 0.56vw;
+    height: 1.4vw;
+}
+
+#ChrisTree12Container {
+    bottom: 38%;
+    left: 45%;
+    width: 0.68vw;
+    height: 1.7vw;
+}
+
+#ChrisTree13Container {
+    bottom: 38%;
+    left: 49%;
+    width: 0.72vw;
+    height: 1.8vw;
+}
+
+#ChrisTree14Container {
+    bottom: 45%;
+    right: 3%;
+    width: 0.52vw;
+    height: 1.3vw;
+}
+
+#ChrisTree15Container {
+    bottom: 45%;
+    right: 13%;
+    width: 0.52vw;
+    height: 1.3vw;
+}
+
+#ChrisTree16Container {
+    bottom: 45%;
+    right: 33%;
+    width: 0.48vw;
+    height: 1.15vw;
+}
+
+#ChrisTree17Container {
+    bottom: 45%;
+    right: 49%;
+    width: 0.48vw;
+    height: 1.15vw;
+}
+
+#ChrisTree18Container {
+    bottom: 45%;
+    right: 53%;
+    width: 0.49vw;
+    height: 1.1vw;
+}
+
+#ChrisTree19Container {
+    bottom: 50%;
+    left: 35%;
+    width: 0.44vw;
+    height: 1.1vw;
+}
+
+#ChrisTree20Container {
+    bottom: 50%;
+    left: 18%;
+    width: 0.41vw;
+    height: 1vw;
+}
+
+#ChrisTree21Container {
+    bottom: 50%;
+    left: 3%;
+    width: 0.44vw;
+    height: 1.1vw;
+}
+
+#ChrisTree22Container {
+    bottom: 53%;
+    right: 32%;
+    width: 0.36vw;
+    height: 0.9vw;
+}
+
+#ChrisTree23Container {
+    bottom: 53%;
+    right: 18%;
+    width: 0.36vw;
+    height: 0.9vw;
+}
+
+#ChrisTree24Container {
+    bottom: 53%;
+    right: 5%;
+    width: 0.36vw;
+    height: 0.9vw;
+}
+
+.treeContainer {
+    position: absolute;
+    transform-origin: center bottom;
+    animation: treeAnimation 2.5s linear 0s infinite alternate forwards;
+}
+
+#tree1Container {
+    bottom: 15%;
+    left: 32%;
+    width: 2vw;
+    height: 3vw;
+}
+
+#tree2Container {
+    bottom: 15%;
+    left: 30%;
+    width: 2.3vw;
+    height: 3.5vw;
+}
+
+#tree3Container {
+    bottom: 27%;
+    right: 27%;
+    width: 2vw;
+    height: 3vw;
+}
+
+#tree4Container {
+    bottom: 27%;
+    right: -0.5%;
+    width: 2vw;
+    height: 3vw;
+}
+
+#tree5Container {
+    bottom: 38%;
+    left: 23%;
+    width: 1.5vw;
+    height: 2.2vw;
+}
+
+#tree6Container {
+    bottom: 38%;
+    left: 3%;
+    width: 1.7vw;
+    height: 2.5vw;
+}
+
+#tree7Container {
+    bottom: 45%;
+    right: -0.6%;
+    width: 1.34vw;
+    height: 2vw;
+}
+
+#tree8Container {
+    bottom: 45%;
+    right: 8%;
+    width: 1.34vw;
+    height: 2.1vw;
+}
+
+#tree9Container {
+    bottom: 45%;
+    right: 55%;
+    width: 1.30vw;
+    height: 1.8vw;
+}
+
+#tree10Container {
+    bottom: 50%;
+    left: 49%;
+    width: 1.05vw;
+    height: 1.5vw;
+}
+
+#tree11Container {
+    bottom: 50%;
+    left: 32%;
+    width: 1.05vw;
+    height: 1.4vw;
+}
+
+#tree12Container {
+    bottom: 50%;
+    left: 12%;
+    width: 1vw;
+    height: 1.3vw;
+}
+
+#tree13Container {
+    bottom: 50%;
+    left: 48%;
+    width: 1vw;
+    height: 1.3vw;
+}
+
+#tree14Container {
+    bottom: 53%;
+    right: 33%;
+    width: 0.7vw;
+    height: 0.95vw;
+}
+
+#tree15Container {
+    bottom: 53%;
+    right: 15.5%;
+    width: 0.73vw;
+    height: 1vw;
+}
+
+#tree16Container {
+    bottom: 53%;
+    right: 15%;
+    width: 0.73vw;
+    height: 1.1vw;
+}
+
+#tree17Container {
+    bottom: 53%;
+    right: 2%;
+    width: 0.7vw;
+    height: 1vw;
+}
+
+
+.bushLeft {
+    height: 90%;
+    width: 70%;
+    position: absolute;
+    left: -50%;
+    bottom: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    background: linear-gradient(to bottom, #3b9758, #111532);
+}
+
+.bushRight {
+    height: 80%;
+    width: 60%;
+    position: absolute;
+    right: -50%;
+    bottom: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    background: linear-gradient(to bottom, #3b9758, #111532);
+}
+
+.bushMid {
+    height: 120%;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    background: linear-gradient(to bottom, #3b9758, #111532);
+}
+
+.ChrisTreeLeavesContainer {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    bottom: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ChrisTreeLeave {
+    height: 15%;
+    margin-top: 7%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #3b9758, #111532);
+}
+
+.ChrisTreeLeave9 {
+    width: 100%;
+}
+
+.ChrisTreeLeave8 {
+    width: 90%;
+}
+
+.ChrisTreeLeave7 {
+    width: 80%;
+}
+
+.ChrisTreeLeave6 {
+    width: 70%;
+}
+
+.ChrisTreeLeave5 {
+    width: 60%;
+}
+
+.ChrisTreeLeave4 {
+    width: 50%;
+}
+
+.ChrisTreeLeave3 {
+    width: 40%;
+}
+
+.ChrisTreeLeave2 {
+    width: 30%;
+}
+
+.ChrisTreeLeave1 {
+    width: 20%;
+}
+
+.ChrisTreeTrunk {
+    width: 25%;
+    height: 50%;
+    background: linear-gradient(to bottom, #523a27, #271608);
+}
+
+.treeLeaves {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    background: linear-gradient(to bottom, #3b9758, #111532);
+}
+
+.treeTrunk {
+    width: 10%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #523a27, #271608);
+}
+
+
+.tractorContainer {
+    position: absolute;
+}
+
+#tractorContainer1 {
+    width: 2.2vw;
+    height: 1.8vw;
+    left: 3%;
+    bottom: 15%;
+}
+
+#tractorContainer2 {
+    width: 2vw;
+    height: 1.64vw;
+    right: 3%;
+    bottom: 27%;
+    opacity: 90;
+}
+
+#tractorContainer3 {
+    width: 1.7vw;
+    height: 1.39vw;
+    right: 40%;
+    bottom: 38%;
+    transform: scaleX(-1);
+    opacity: 85;
+}
+
+#tractorContainer4 {
+    width: 1.3vw;
+    height: 1.07vw;
+    right: 28%;
+    bottom: 45%;
+    transform: scaleX(-1);
+    opacity: 80;
+}
+
+#tractorContainer5 {
+    width: 1vw;
+    height: 0.82vw;
+    left: 25%;
+    bottom: 50%;
+    transform: scaleX(-1);
+    opacity: 75;
+}
+
+.tractorBody {
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.engine {
+    background-color: #957060;
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: -4%;
+}
+
+.grill {
+    width: 70%;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.grillItem {
+    background-color: #4a3752;
+    width: 10%;
+    height: 100%;
+    border-radius: 20%;
+}
+
+.exhaust {
+    position: absolute;
+    right: 60%;
+    bottom: 70%;
+    width: 20%;
+    height: 130%;
+}
+
+.exhaustTop {
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    background-color: #523e41;
+    border-radius: 50%;
+}
+
+.exhaustBottom {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #694f52;
+    border-radius: 50%;
+}
+
+.drive {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: -10%;  
+}
+
+.driveLeft, .driveRight{
+    background-color: #957060;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+}
+
+.driveLeft {
+    width: 50%;
+    height: 100%;
+    transform: skew(-5deg);
+}
+
+.driveRight {
+    width: 50%;
+    height: 100%;
+    transform: translateX(80%) skew(5deg);
+}
+
+.driveGlass {
+    width: 60%;
+    height: 38%;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+}
+
+.driveGlassLeft, .driveGlassRight{
+    background-color: #cbb294;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+}
+
+.driveGlassLeft {
+    width: 50%;
+    height: 100%;
+    transform: skew(-2deg);
+}
+
+.driveGlassRight {
+    width: 50%;
+    height: 100%;
+    transform: translateX(80%) skew(2deg);
+}
+
+.bigWheel {
+    width: 55%;
+    height: 60%;
+    background-color: #4a3752;
+    position: absolute;
+    left: -30%;
+    bottom: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bigWheelMetal {
+    background-color: #cbb294;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    transform: translateY(5%);
+}
+
+.smallWheel {
+    width: 40%;
+    height: 45%;
+    background-color: #4a3752;
+    position: absolute;
+    right: -24%;
+    bottom: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smallWheelMetal {
+    background-color: #cbb294;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    transform: translateY(5%);
+}
