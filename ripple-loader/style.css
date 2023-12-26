@@ -1,0 +1,154 @@
+:root {
+	--loader: #111;
+	--blue: #2196f3;
+	--spd: 1.725s;
+}
+
+* { 
+	transform-style: preserve-3d;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 100vmin;
+	background: var(--blue);
+}
+
+.content {
+	width: 70vmin;
+	height: 50vmin;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.surface {
+	width: 70vmin;
+	height: 70vmin;
+	transform: rotateX(60deg);
+}
+
+.surface:before,
+.surface:after {
+	content: "";
+	background: 
+		linear-gradient(180deg, #fff0 1.35vmin, var(--blue) 0 1.7vmin, #fff0 0 0vmin),
+		radial-gradient(circle at 50% 95%, #fff0 1vmin, var(--blue) calc(1vmin + 1px) 1.5vmin, #fff0 0 100%), 
+		radial-gradient(circle at 50% 5%, #fff0 1vmin, var(--blue) calc(1vmin + 1px) 1.5vmin, #fff0 0 100%);
+	width: 2.15vmin;
+	height: 3vmin;
+	position: absolute;
+	left: 14.95vmin;
+	top: 34vmin;
+	transform: rotateX(90deg);
+	border-radius: 5px;
+	animation: hide var(--spd) 0s infinite;
+	opacity: 0;
+}
+
+.surface:after {
+	left: 52.8vmin;
+	animation-delay: calc(var(--spd) / 2);
+}
+
+@keyframes hide {
+	0%, 10% { opacity: 1; }	
+	15%, 100% { opacity: 0; }
+}
+
+.loaders { 
+	position: absolute;
+	width: 40vmin;
+	height: 40vmin;
+	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+.loader { 
+	position: absolute;
+	width: 40vmin;
+	height: 40vmin;
+	background: 
+		radial-gradient(circle at 20vmin 50%, #fff0 18.1vmin, var(--loader) calc(18.1vmin + 1px) 100%),
+		radial-gradient(circle at 50% 50%, var(--loader) 0.88vmin, #fff0 calc(0.88vmin + 1px) 100%),
+		radial-gradient(circle at 50% 50%, var(--loader) 0.88vmin, #fff0 calc(0.88vmin + 1px) 100%);
+	background-size: 6vmin 6vmin, 1.9vmin 1.9vmin, 1.9vmin 1.9vmin;
+	background-position: 0 50%, 0.2vmin 43%, 0.2vmin 57%;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+	transform: rotate(-25deg);
+	transition: all 1s ease 0s;
+	animation: loading var(--spd) linear 0s infinite;
+}
+
+.loader.shadow {
+	opacity: 0.25;
+	transform: rotateX(180deg) rotate(-25deg); 
+	animation-name: loading-shadow;
+}
+
+@keyframes loading {
+	100% { transform: rotate(335deg); }
+}
+
+@keyframes loading-shadow {
+	100% { transform: rotateX(180deg) rotate(335deg); }
+}
+
+.loaders + .loaders { 
+	clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.waves {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	filter: blur(1px);
+}
+
+.waves:before, 
+.waves:after {
+	content: "";
+	width: 5vmin;
+	height: 5vmin;
+	border-radius: 100%;
+	position: absolute;
+	top: 32vmin;
+	left: 13.1vmin;
+	border: 1px solid #333;
+	animation: wave var(--spd) ease 0s infinite;
+	transform:scale(0); 
+	opacity: 0;
+}
+
+.waves:after {
+	top: 32vmin;
+	left: 51.35vmin;
+	animation-delay: calc(calc(var(--spd) / 4) * 1.85); /*1.9s*/
+}
+
+@keyframes wave {
+	0% { transform:scale(0); opacity: 1;}
+	60% { transform:scale(2); opacity: 0;}
+	100% { transform:scale(0); opacity: 0;}	
+}
+
+.waves + .waves:before, 
+.waves + .waves:after {
+	width: 2vmin;
+	height: 2vmin;
+	margin-left: 1.5vmin;
+	margin-top: 1.5vmin;
+	animation-delay: calc(var(--spd) / 8);
+}
+
+.waves + .waves:after {
+	animation-delay: calc(calc(var(--spd) / 4) * 2.5) ;
+}
