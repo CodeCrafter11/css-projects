@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
+:root {
+  --tran: all 0.5s ease 0s;
+  --dark: #1c2429;
+  --back: #1d659f;
+}
+
+* { outline: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient( circle at 50% 50%, var(--back), #11114e);
+}
+
+
+.star:hover,
+.star:has(~ .star:hover),
+.star:has(:checked),
+.star:has(~ .star :checked) {
+  --star: #ffd900;
+}
+
+.number:hover ~ .star:has(~ .star :checked),
+.number:hover ~ .star:has(:checked),
+.star:hover ~ .star:has(~ .star :checked),
+.star:hover ~ .star:has(:checked) {
+  --star: #1c619c;
+}
+
+
+.number:hover ~ .star:has(~ .star :checked):after,
+.number:hover ~ .star:has(:checked):after,
+.star:hover ~ .star:has(~ .star :checked):after,
+.star:hover ~ .star:has(:checked):after {
+  clip-path: polygon(28% 55%, 2% 41%, 30% 31%, 36% 1%, 53% 24%, 28% 55%, 35% 62%, 68% 44%, 98% 52%, 73% 68%, 75% 99%, 52% 80%, 24% 91%, 35% 62%);
+}
+
+
+.number:hover ~ .star:has(~ .star :checked),
+.number:hover ~ .star:has(:checked),
+.star:hover ~ .star:has(~ .star :checked),
+.star:hover ~ .star:has(:checked) {
+  background: var(--dark);
+  transition: all 0.1s ease 0s;
+  transition: var(--tran);
+}
+
+
+.star:has(:checked) {
+  transform: scale(1.25);
+  transition-timing-function: linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+
+.star-rating {
+  padding: 2vmin 10vmin 2.25vmin 4vmin;
+  border-radius: 10vmin;
+  font-size: 5vmin;
+  position: relative;
+  background: var(--dark);
+}
+
+.stars {
+  display: flex;
+}
+
+.star {
+  display: grid;
+  place-items: center;
+  padding: 1vmin;
+  cursor: pointer;
+  transition: var(--tran);
+  background: radial-gradient(circle at 50% 50%, #1c5e98 1vmin, #fff0 calc(1vmin + 1px) 100%);
+}
+
+.star input,
+.star::before,
+.star::after {
+  grid-area: star;
+  width: 5vmin;
+  height: 5vmin;
+  margin: 0 0.5vmin;
+}
+
+.star [type="radio"] {
+  appearance: none;
+}
+
+.star::before,
+.star::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 66% 32%, 100% 38%, 78% 64%, 83% 100%, 50% 83%, 17% 100%, 22% 64%, 0 38%, 34% 32%);
+}
+
+.star::after {
+  transition: all ease-in-out 130ms;
+  width: calc(100% - 0.25vmin);
+  height: calc(100% - 0.25vmin);
+  background: var(--star);
+}
+
+
+
+.number-rating:before {
+  content: "0";
+  font-family: 'Days One', sans-serif;
+  display: grid;
+  place-items: center;
+  background: #ffd900;
+  color: var(--dark);
+  position: absolute;
+  margin-top: -3.1vmin;
+  border-radius: 100%;
+  margin-left: 2vmin;
+  font-size: 6vmin;
+  width: 13vmin;
+  height: 13vmin;
+}
+
+body:has(.star:nth-child(2) > input:checked) .star-rating .number-rating:before {
+  content: "1";
+}
+
+body:has(.star:nth-child(3) > input:checked) .star-rating .number-rating:before {
+  content: "2";
+}
+
+body:has(.star:nth-child(4) > input:checked) .star-rating .number-rating:before {
+  content: "3";
+}
+
+body:has(.star:nth-child(5) > input:checked) .star-rating .number-rating:before {
+  content: "4";
+}
+
+body:has(.star:nth-child(6) > input:checked) .star-rating .number-rating:before {
+  content: "5";
+}
+
+
+
+
+
+body:has(.number:hover) .star-rating .number-rating:before {
+  content: "0" !important;
+}
+
+body:has(.star:nth-child(2):hover) .star-rating .number-rating:before {
+  content: "1" !important;
+}
+
+body:has(.star:nth-child(3):hover) .star-rating .number-rating:before {
+  content: "2" !important;
+}
+
+body:has(.star:nth-child(4):hover) .star-rating .number-rating:before {
+  content: "3" !important;
+}
+
+body:has(.star:nth-child(5):hover) .star-rating .number-rating:before {
+  content: "4" !important;
+}
+
+body:has(.star:nth-child(6):hover) .star-rating .number-rating:before {
+  content: "5" !important;
+}
+
+
+
+.number input { 
+  display: none;
+}
+
+.number {
+  right: -5vmin;
+  top: -1vmin;
+  z-index: 1;
+  height: 13vmin;
+  width: 13vmin;
+  position: absolute;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.number:before {
+  --ar: var(--dark);
+  content: "";
+  position: absolute;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 100%;
+  transform: rotate(0deg);
+  background: 
+    radial-gradient(circle at 50% 125%, #fff0 45%, var(--ar) calc(45% + 1px) 50%, #fff0 calc(50% + 1px) 100%), 
+    radial-gradient(circle at 50% -25%, #fff0 45%, var(--ar) calc(45% + 1px) 50%, #fff0 calc(50% + 1px) 100%), 
+    conic-gradient(from -45deg at 50% 60%, var(--ar) 0 25%, #fff0 0 100%), 
+    conic-gradient(from 135deg at 50% 40%, var(--ar) 0 25%, #fff0 0 100%);
+  background-size: 100% 45%, 100% 45%, 1.75vmin 1.75vmin, 1.75vmin 1.75vmin;
+  background-repeat: no-repeat;
+  background-position: 0% -10%, 0% 110%, 90% 52%, 10% 46%;
+  transition: var(--tran);
+  opacity: 0.05;
+}
+
+.number:hover:before {
+  transform: rotate(360deg);
+  opacity: 1;
+}
