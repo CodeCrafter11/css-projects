@@ -1,0 +1,54 @@
+:root {
+    --c: #ffa500;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 50%, #252525, #010101);
+  }
+  
+  
+  .loader {
+    width: 15vmin;
+    height: 15vmin;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(from 150deg at 50% 14%, var(--c) 0 60deg, #fff0 0 100%);
+    filter: 
+      drop-shadow(0.2vmin 0.2vmin 0vmin #bf7200) drop-shadow(0.2vmin 0.2vmin 0vmin #ab6701) 
+      drop-shadow(0.2vmin 0.2vmin 0vmin #9c5e01) drop-shadow(0.2vmin 0.2vmin 0vmin #8d5502) 
+      drop-shadow(0.4vmin 0.2vmin 0vmin #744602) drop-shadow(0.4vmin 0.2vmin 0vmin #5f3900) 
+      drop-shadow(0.4vmin 0.2vmin 0vmin #4d2e00) drop-shadow(0.4vmin 0.2vmin 0vmin #382200) 
+      drop-shadow(4vmin 3vmin 1vmin #0008);
+  }
+  
+  .loader span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: 100% 100%;
+    transform: rotate(60deg);
+    animation: spin 1.5s ease-in-out -1.245s infinite;
+    background: conic-gradient(from 150deg at 50% 14%, var(--c) 0 60deg, #fff0 0 100%);
+  }
+  
+  .loader span + span {
+    transform-origin: 0% 100%;
+  }
+  
+  .loader span + span + span {
+    transform-origin: 50% 14%;
+  }
+  
+  @keyframes spin {
+    100% { transform: rotate(300deg); }  
+  }
