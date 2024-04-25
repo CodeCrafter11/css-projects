@@ -1,0 +1,163 @@
+/* author: https://codepen.io/bramus/pen/OJrxBaL
+Bramus
+ */
+@property --scroll-position {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 0;
+}
+@property --scroll-position-delayed {
+	syntax: "<number>";
+	inherits: true;
+	initial-value: 0;
+}
+
+@keyframes adjust-pos {
+	to {
+		--scroll-position: 1;
+		--scroll-position-delayed: 1;
+	}
+}
+
+:root {
+	animation: adjust-pos 0.01s linear both; 
+	animation-timeline: scroll(root);
+}
+
+body {
+	transition: --scroll-position-delayed 0.15s linear;
+	--scroll-velocity: calc(
+		var(--scroll-position) - var(--scroll-position-delayed)
+	);
+}
+
+html {
+	background: #666;
+}
+
+html {
+	scroll-snap-type: y mandatory;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	pointer-events: none;
+	line-height: 1;
+	display: block;
+}
+
+ul li {
+	display: block;
+	line-height: 1;
+}
+
+.panel {
+	scroll-snap-align: center;
+	height: 100dvh;
+	border: 2px solid #333;
+	background: rgb(0 0 0 / 0.15);
+	z-index: -1;
+}
+
+.panel img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: brightness(30%);
+}
+
+@keyframes slide-up {
+	to {
+		translate: 0 var(--end-pos);
+	}
+}
+
+.titles {
+	position: fixed;
+	z-index: 2;
+	top: 50dvh;
+	font-size: 25dvh;
+	left: 0;
+	right: 0;
+	text-align: center;
+	animation: slide-up 0.01s linear; 
+	animation-timeline: scroll(root block);
+	font-family: impact;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	--num-children: 8;
+	--num-children-1: calc(var(--num-children) - 1);
+	--size-per-child: calc(100% / var(--num-children));
+	--half-size-per-child: calc(var(--size-per-child) / 2);
+	--start-pos: calc(var(--half-size-per-child) * -1);
+	--end-pos: calc(-100% + var(--half-size-per-child));
+	translate: 0 var(--start-pos);
+}
+
+.titles.transparent {
+	color: transparent;
+	-webkit-text-stroke: 1px rgb(255 255 255 / 0.7);
+	text-stroke: 1px rgb(255 255 255 / 0.7);
+}
+
+.titles.fill {
+	color: hotpink;
+
+	--y-per-child: calc(1 / var(--num-children));
+	--cur-child: calc((var(--scroll-position) / var(--y-per-child)) + 1);
+	--cur-child-1: calc(var(--cur-child) - 1);
+	--clip-min: 0;
+	--clip-max: calc(100% - var(--size-per-child));
+	--clip-per-child: calc(var(--clip-max) / var(--num-children));
+	--fix: calc(
+		var(--clip-per-child) / 8
+	); 
+	--extra: 1%;
+	clip-path: inset(
+		calc((var(--cur-child-1) * var(--clip-per-child)) - var(--extra)) 0%
+			calc(
+				(100% - (var(--cur-child) * var(--clip-per-child)) - var(--fix)) -
+					var(--extra)
+			)
+			0%
+	);
+}
+
+
+.titles li {
+	will-change: transform;
+	transform-origin: 50% 50%;
+	transform: skewY(calc(var(--scroll-velocity) * -75deg));
+}
+
+
+.warning {
+	border: 1px solid black;
+	z-index: 9999;
+	color: black;
+	background: rgba(255 255 225 / 0.9);
+	z-index: 1;
+
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	right: 1em;
+	text-align: center;
+}
+
+.warning p {
+	margin: 1em 0;
+}
+
+@supports (view-timeline: --works) {
+	.warning {
+		display: none;
+	}
+}
