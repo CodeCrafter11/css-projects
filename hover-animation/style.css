@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  & h1 {
+    font: 550 5.5rem 'arial-black',impact,sans-serif;
+    cursor: pointer; 
+  }
+
+  & :where(h1, .image) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.stroke {
+  z-index: 10;
+  -webkit-text-stroke-width: 0.25rem;
+  -webkit-text-stroke-color: black;
+  -webkit-text-fill-color: transparent;
+
+  &:hover + .image {
+    opacity: 1;
+    transform: translateX(0) rotate(-25deg);
+    transition: transform 1s, opacity 0.5s;
+  }
+}
+
+.image {
+  width: 400px;
+  opacity: 0;
+  transform: translateX(150%);
+  transition: transform 1s, opacity 0.5s 0.25s;
+}
