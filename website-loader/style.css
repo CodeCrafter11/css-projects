@@ -1,0 +1,117 @@
+/*..EXTEND...*/
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  body {
+    background: #00a096;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*TITLE*/
+  h1 {
+    color: #fafafa;
+    font-family: 'Courier Prime', monospace;
+    font-size: 32px;
+    text-align: center;
+    margin: 0 0 8px;
+  }
+  
+  /*TITLES*/
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*...DOTS...*/
+  .dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dot__item {
+    background: #fafafa;
+    border-radius: 50%;
+    height: 4px;
+    width: 4px;
+    margin: 0 4px;
+    animation: dot linear infinite;
+  }
+  
+  .dot__item-1 {
+    animation-duration: 1s;
+  }
+  
+  .dot__item-2 {
+    animation-delay: 1s;
+    animation-duration: 1.5s;
+  }
+  
+  .dot__item-3 {
+    animation-delay: 2s;
+    animation-duration: 2s;
+  }
+  
+  /*PROGRESS BAR*/
+  .progress {
+    border: 4px solid #f7dd27;
+    height: 32px;
+    width: 400px;
+    display: flex;
+  }
+  
+  .progress__bar {
+    background: #ed5a70;
+    animation: progressBar 5s linear infinite;
+    animation-delay: 1s;
+  }
+  
+  /*KEYFRAMES*/
+  @keyframes progressBar {
+    0% {
+      width: 4px;
+    }
+    30% {
+      width: 250px;
+    }
+    60% {
+      width: 255px;
+    }
+    80% {
+      width: 300px;
+    }
+    85% {
+      width: 308px;
+    }
+    90% {
+      width: 308px;
+    }
+    95% {
+      width: 390px;
+    }
+    100% {
+      width: 400px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes dot {
+    0% {
+      margin: 0 4px;
+    }
+    50% {
+      margin: 0 4px 8px;
+    }
+    100% {
+      margin: 0 4px;
+    }
+  }
+  
