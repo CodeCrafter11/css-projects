@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  .list {
+    display: flex;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    list-style-type: none;
+  
+    &:hover :not(:hover) {
+      margin: 0 -20px;
+      transform: perspective(500px) rotateY(45deg) scale(0.95);
+    }
+  
+    &:hover :not(:hover)::after {
+      opacity: 0.4;
+    }
+  }
+  
+  .item {
+    position: relative;
+    width: 120px;
+    aspect-ratio: 3/4;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    transition: margin 0.5s, transform 0.5s;
+  
+    &:nth-of-type(1) { background-image: url(https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2215&q=80); }
+    &:nth-of-type(2) { background-image: url(https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2215&q=80); }
+    &:nth-of-type(3) { background-image: url(https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2265&q=80); }
+    &:nth-of-type(4) { background-image: url(https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2244&q=80); }
+    &:nth-of-type(5) { background-image: url(https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2264&q=80); }
+  
+    &:hover ~ .item {
+      transform: perspective(500px) rotateY(-45deg) scale(0.95);
+    }
+  
+    &:hover {
+      transform: perspective(500px) rotateY(0) scale(1.2);
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      aspect-ratio: inherit;
+      border-radius: inherit;
+      background-color: black;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+  }
