@@ -1,0 +1,100 @@
+:root {
+    --primary: rgb(219, 92, 120);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: rgb(53, 47, 55);
+  }
+  
+  .container { position: relative; }
+  
+  .loader {
+    position: relative;
+    width: 3rem;
+    height: 4rem;
+    background-color: rgb(158, 199, 199);
+    border-radius: 1rem;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  
+  .loader::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--primary);
+    border-radius: 40%;
+    animation: waves 8s linear infinite;
+  }
+  
+  @keyframes waves {
+    100% {
+      transform: translate(-50%) rotate(360deg);
+    }
+  }
+  
+  .loader::after {
+    content: '';
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.4rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(255,255,255,0.3);
+  }
+  
+  .loader-drip {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    animation: drip 2s linear infinite;
+  }
+  
+  @keyframes drip {
+    15% {
+      transform: translate(-50%,calc(0.75rem/2)) scale(1.1);
+    }
+  }
+  
+  .loader-drop {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    animation: drop 2s linear infinite;
+  }
+  
+  @keyframes drop {
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%,5rem);
+      opacity: 0;
+    }
+  }
