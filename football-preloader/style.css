@@ -1,0 +1,166 @@
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --hue: 210;
+    --bg: hsl(var(--hue), 10%, 85%);
+    --fg: hsl(var(--hue), 10%, 15%);
+    --red: hsl(344, 75%, 40%);
+    --white: hsl(0, 0%, 100%);
+    --blue: hsl(213, 81%, 21%);
+    --trans-dur: 0.3s;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    display: flex;
+    font: 1em/1.5 sans-serif;
+    height: 100vh;
+    transition: background-color var(--trans-dur), color var(--trans-dur);
+  }
+  
+  .pl {
+    display: block;
+    margin: auto;
+    width: 14em;
+    height: auto;
+    --dur: 3s;
+  
+    /* Debugging styles */
+    /* Uncomment below if debugging is needed */
+    /* 
+    --delay: calc(var(--dur) * 0);
+    outline: 1px solid;
+    */
+  }
+  
+  .pl__ball,
+  .pl__ball-shadow,
+  .pl__ball-texture,
+  .pl__stripe,
+  .pl__stripe-dot,
+  .pl__stripe-rotate {
+    animation: animation-name var(--dur) linear infinite;
+  }
+  
+  .pl__ball {
+    animation-name: ball;
+  }
+  
+  .pl__ball-shadow {
+    animation-name: ball-shadow;
+  }
+  
+  .pl__ball-texture {
+    animation-name: ball-texture;
+  }
+  
+  .pl__stripe {
+    animation-name: stripe;
+  }
+  
+  .pl__stripe--1 {
+    animation-name: stripe1;
+  }
+  
+  .pl__stripe--2 {
+    animation-name: stripe2;
+  }
+  
+  .pl__stripe--3 {
+    animation-name: stripe3;
+  }
+  
+  .pl__stripe-dot {
+    animation-name: stripe-dot;
+  }
+  
+  .pl__stripe-rotate {
+    animation-name: stripe-rotate;
+  }
+  
+  /* Keyframe Animations */
+  @keyframes ball {
+    from {
+      transform: rotate(0) translate(0, -15.75px);
+    }
+    to {
+      transform: rotate(1turn) translate(0, -15.75px);
+    }
+  }
+  
+  @keyframes ball-shadow {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(-1turn);
+    }
+  }
+  
+  @keyframes ball-texture {
+    from {
+      transform: translate(-16px, 0);
+    }
+    to {
+      transform: translate(48px, 0);
+    }
+  }
+  
+  @keyframes stripe-dot {
+    from {
+      r: 1.25px;
+    }
+    16.67%, to {
+      r: 0;
+    }
+  }
+  
+  @keyframes stripe-rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
+  @keyframes stripe1 {
+    from,
+    to {
+      stroke-dashoffset: -114.7 * 0.835;
+    }
+    50% {
+      animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+      stroke-dashoffset: -114.7 * 0.66;
+    }
+  }
+  
+  @keyframes stripe2 {
+    from,
+    to {
+      stroke-dashoffset: -106.8 * 0.75;
+    }
+    50% {
+      animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+      stroke-dashoffset: -106.8 * 0.5;
+    }
+  }
+  
+  @keyframes stripe3 {
+    from,
+    to {
+      stroke-dashoffset: -99 * 0.735;
+    }
+    50% {
+      animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+      stroke-dashoffset: -99 * 0.49;
+    }
+  }
+  
